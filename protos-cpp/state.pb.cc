@@ -20,7 +20,7 @@ extern PROTOBUF_INTERNAL_EXPORT_common_2eproto ::google::protobuf::internal::SCC
 extern PROTOBUF_INTERNAL_EXPORT_state_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Projectile_state_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_state_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Tile_state_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_state_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Unit_state_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_state_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_Map_state_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_state_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_Map_state_2eproto;
 namespace eap {
 class UnitDefaultTypeInternal {
  public:
@@ -98,8 +98,9 @@ static void InitDefaultsMap_state_2eproto() {
   ::eap::Map::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<3> scc_info_Map_state_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsMap_state_2eproto}, {
+::google::protobuf::internal::SCCInfo<4> scc_info_Map_state_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsMap_state_2eproto}, {
+      &scc_info_Position_common_2eproto.base,
       &scc_info_Tile_state_2eproto.base,
       &scc_info_Unit_state_2eproto.base,
       &scc_info_Projectile_state_2eproto.base,}};
@@ -160,6 +161,7 @@ const ::google::protobuf::uint32 TableStruct_state_2eproto::offsets[] PROTOBUF_S
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::eap::Map, size_),
   PROTOBUF_FIELD_OFFSET(::eap::Map, tiles_),
   PROTOBUF_FIELD_OFFSET(::eap::Map, ally_units_),
   PROTOBUF_FIELD_OFFSET(::eap::Map, enemy_units_),
@@ -176,7 +178,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 9, -1, sizeof(::eap::Tile)},
   { 16, -1, sizeof(::eap::Projectile)},
   { 23, -1, sizeof(::eap::Map)},
-  { 32, -1, sizeof(::eap::State)},
+  { 33, -1, sizeof(::eap::State)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -202,17 +204,18 @@ const char descriptor_table_protodef_state_2eproto[] =
   "&\n\004Type\022\t\n\005FLOOR\020\000\022\t\n\005WATER\020\001\022\010\n\004WALL\020\002\""
   "]\n\nProjectile\022\031\n\021thrown_by_unit_id\030\001 \001(\005"
   "\022\"\n\004type\030\002 \001(\0162\024.eap.Projectile.Type\"\020\n\004"
-  "Type\022\010\n\004BOMB\020\000\"\204\001\n\003Map\022\030\n\005tiles\030\001 \003(\0132\t."
-  "eap.Tile\022\035\n\nally_units\030\002 \003(\0132\t.eap.Unit\022"
-  "\036\n\013enemy_units\030\003 \003(\0132\t.eap.Unit\022$\n\013proje"
-  "ctiles\030\004 \003(\0132\017.eap.Projectile\"\036\n\005State\022\025"
-  "\n\003map\030\001 \001(\0132\010.eap.Map*.\n\005Class\022\n\n\006KNIGHT"
-  "\020\000\022\n\n\006ARCHER\020\001\022\r\n\tBOMBERMAN\020\002b\006proto3"
+  "Type\022\010\n\004BOMB\020\000\"\241\001\n\003Map\022\033\n\004size\030\001 \001(\0132\r.e"
+  "ap.Position\022\030\n\005tiles\030\002 \003(\0132\t.eap.Tile\022\035\n"
+  "\nally_units\030\003 \003(\0132\t.eap.Unit\022\036\n\013enemy_un"
+  "its\030\004 \003(\0132\t.eap.Unit\022$\n\013projectiles\030\005 \003("
+  "\0132\017.eap.Projectile\"\036\n\005State\022\025\n\003map\030\001 \001(\013"
+  "2\010.eap.Map*.\n\005Class\022\n\n\006KNIGHT\020\000\022\n\n\006ARCHE"
+  "R\020\001\022\r\n\tBOMBERMAN\020\002b\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_state_2eproto = {
   false, InitDefaults_state_2eproto, 
   descriptor_table_protodef_state_2eproto,
-  "state.proto", &assign_descriptors_table_state_2eproto, 557,
+  "state.proto", &assign_descriptors_table_state_2eproto, 586,
 };
 
 void AddDescriptors_state_2eproto() {
@@ -1370,12 +1373,26 @@ void Projectile::InternalSwap(Projectile* other) {
 // ===================================================================
 
 void Map::InitAsDefaultInstance() {
+  ::eap::_Map_default_instance_._instance.get_mutable()->size_ = const_cast< ::eap::Position*>(
+      ::eap::Position::internal_default_instance());
 }
 class Map::HasBitSetters {
  public:
+  static const ::eap::Position& size(const Map* msg);
 };
 
+const ::eap::Position&
+Map::HasBitSetters::size(const Map* msg) {
+  return *msg->size_;
+}
+void Map::clear_size() {
+  if (GetArenaNoVirtual() == nullptr && size_ != nullptr) {
+    delete size_;
+  }
+  size_ = nullptr;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Map::kSizeFieldNumber;
 const int Map::kTilesFieldNumber;
 const int Map::kAllyUnitsFieldNumber;
 const int Map::kEnemyUnitsFieldNumber;
@@ -1395,12 +1412,18 @@ Map::Map(const Map& from)
       enemy_units_(from.enemy_units_),
       projectiles_(from.projectiles_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_size()) {
+    size_ = new ::eap::Position(*from.size_);
+  } else {
+    size_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:eap.Map)
 }
 
 void Map::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_Map_state_2eproto.base);
+  size_ = nullptr;
 }
 
 Map::~Map() {
@@ -1409,6 +1432,7 @@ Map::~Map() {
 }
 
 void Map::SharedDtor() {
+  if (this != internal_default_instance()) delete size_;
 }
 
 void Map::SetCachedSize(int size) const {
@@ -1430,6 +1454,10 @@ void Map::Clear() {
   ally_units_.Clear();
   enemy_units_.Clear();
   projectiles_.Clear();
+  if (GetArenaNoVirtual() == nullptr && size_ != nullptr) {
+    delete size_;
+  }
+  size_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -1446,9 +1474,22 @@ const char* Map::_InternalParse(const char* begin, const char* end, void* object
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // repeated .eap.Tile tiles = 1;
+      // .eap.Position size = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::eap::Position::_InternalParse;
+        object = msg->mutable_size();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // repeated .eap.Tile tiles = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
@@ -1459,12 +1500,12 @@ const char* Map::_InternalParse(const char* begin, const char* end, void* object
           GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
               {parser_till_end, object}, ptr - size, ptr));
           if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 10 && (ptr += 1));
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 18 && (ptr += 1));
         break;
       }
-      // repeated .eap.Unit ally_units = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+      // repeated .eap.Unit ally_units = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
@@ -1475,12 +1516,12 @@ const char* Map::_InternalParse(const char* begin, const char* end, void* object
           GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
               {parser_till_end, object}, ptr - size, ptr));
           if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 18 && (ptr += 1));
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 26 && (ptr += 1));
         break;
       }
-      // repeated .eap.Unit enemy_units = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+      // repeated .eap.Unit enemy_units = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
@@ -1491,12 +1532,12 @@ const char* Map::_InternalParse(const char* begin, const char* end, void* object
           GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
               {parser_till_end, object}, ptr - size, ptr));
           if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 26 && (ptr += 1));
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 34 && (ptr += 1));
         break;
       }
-      // repeated .eap.Projectile projectiles = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
+      // repeated .eap.Projectile projectiles = 5;
+      case 5: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
@@ -1507,7 +1548,7 @@ const char* Map::_InternalParse(const char* begin, const char* end, void* object
           GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
               {parser_till_end, object}, ptr - size, ptr));
           if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 34 && (ptr += 1));
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 42 && (ptr += 1));
         break;
       }
       default: {
@@ -1540,9 +1581,20 @@ bool Map::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .eap.Tile tiles = 1;
+      // .eap.Position size = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_size()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .eap.Tile tiles = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_tiles()));
         } else {
@@ -1551,9 +1603,9 @@ bool Map::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .eap.Unit ally_units = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+      // repeated .eap.Unit ally_units = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_ally_units()));
         } else {
@@ -1562,9 +1614,9 @@ bool Map::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .eap.Unit enemy_units = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+      // repeated .eap.Unit enemy_units = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_enemy_units()));
         } else {
@@ -1573,9 +1625,9 @@ bool Map::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .eap.Projectile projectiles = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
+      // repeated .eap.Projectile projectiles = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_projectiles()));
         } else {
@@ -1611,38 +1663,44 @@ void Map::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .eap.Tile tiles = 1;
+  // .eap.Position size = 1;
+  if (this->has_size()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, HasBitSetters::size(this), output);
+  }
+
+  // repeated .eap.Tile tiles = 2;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->tiles_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1,
+      2,
       this->tiles(static_cast<int>(i)),
       output);
   }
 
-  // repeated .eap.Unit ally_units = 2;
+  // repeated .eap.Unit ally_units = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->ally_units_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2,
+      3,
       this->ally_units(static_cast<int>(i)),
       output);
   }
 
-  // repeated .eap.Unit enemy_units = 3;
+  // repeated .eap.Unit enemy_units = 4;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->enemy_units_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3,
+      4,
       this->enemy_units(static_cast<int>(i)),
       output);
   }
 
-  // repeated .eap.Projectile projectiles = 4;
+  // repeated .eap.Projectile projectiles = 5;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->projectiles_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4,
+      5,
       this->projectiles(static_cast<int>(i)),
       output);
   }
@@ -1660,36 +1718,43 @@ void Map::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .eap.Tile tiles = 1;
+  // .eap.Position size = 1;
+  if (this->has_size()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, HasBitSetters::size(this), target);
+  }
+
+  // repeated .eap.Tile tiles = 2;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->tiles_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, this->tiles(static_cast<int>(i)), target);
+        2, this->tiles(static_cast<int>(i)), target);
   }
 
-  // repeated .eap.Unit ally_units = 2;
+  // repeated .eap.Unit ally_units = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->ally_units_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        2, this->ally_units(static_cast<int>(i)), target);
+        3, this->ally_units(static_cast<int>(i)), target);
   }
 
-  // repeated .eap.Unit enemy_units = 3;
+  // repeated .eap.Unit enemy_units = 4;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->enemy_units_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        3, this->enemy_units(static_cast<int>(i)), target);
+        4, this->enemy_units(static_cast<int>(i)), target);
   }
 
-  // repeated .eap.Projectile projectiles = 4;
+  // repeated .eap.Projectile projectiles = 5;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->projectiles_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        4, this->projectiles(static_cast<int>(i)), target);
+        5, this->projectiles(static_cast<int>(i)), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1713,7 +1778,7 @@ size_t Map::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .eap.Tile tiles = 1;
+  // repeated .eap.Tile tiles = 2;
   {
     unsigned int count = static_cast<unsigned int>(this->tiles_size());
     total_size += 1UL * count;
@@ -1724,7 +1789,7 @@ size_t Map::ByteSizeLong() const {
     }
   }
 
-  // repeated .eap.Unit ally_units = 2;
+  // repeated .eap.Unit ally_units = 3;
   {
     unsigned int count = static_cast<unsigned int>(this->ally_units_size());
     total_size += 1UL * count;
@@ -1735,7 +1800,7 @@ size_t Map::ByteSizeLong() const {
     }
   }
 
-  // repeated .eap.Unit enemy_units = 3;
+  // repeated .eap.Unit enemy_units = 4;
   {
     unsigned int count = static_cast<unsigned int>(this->enemy_units_size());
     total_size += 1UL * count;
@@ -1746,7 +1811,7 @@ size_t Map::ByteSizeLong() const {
     }
   }
 
-  // repeated .eap.Projectile projectiles = 4;
+  // repeated .eap.Projectile projectiles = 5;
   {
     unsigned int count = static_cast<unsigned int>(this->projectiles_size());
     total_size += 1UL * count;
@@ -1755,6 +1820,13 @@ size_t Map::ByteSizeLong() const {
         ::google::protobuf::internal::WireFormatLite::MessageSize(
           this->projectiles(static_cast<int>(i)));
     }
+  }
+
+  // .eap.Position size = 1;
+  if (this->has_size()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *size_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -1788,6 +1860,9 @@ void Map::MergeFrom(const Map& from) {
   ally_units_.MergeFrom(from.ally_units_);
   enemy_units_.MergeFrom(from.enemy_units_);
   projectiles_.MergeFrom(from.projectiles_);
+  if (from.has_size()) {
+    mutable_size()->::eap::Position::MergeFrom(from.size());
+  }
 }
 
 void Map::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1819,6 +1894,7 @@ void Map::InternalSwap(Map* other) {
   CastToBase(&ally_units_)->InternalSwap(CastToBase(&other->ally_units_));
   CastToBase(&enemy_units_)->InternalSwap(CastToBase(&other->enemy_units_));
   CastToBase(&projectiles_)->InternalSwap(CastToBase(&other->projectiles_));
+  swap(size_, other->size_);
 }
 
 ::google::protobuf::Metadata Map::GetMetadata() const {

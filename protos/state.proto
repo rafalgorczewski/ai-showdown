@@ -36,10 +36,11 @@ message Projectile {
 }
 
 message Map {
-	repeated Tile tiles = 1;
-	repeated Unit ally_units = 2;
-	repeated Unit enemy_units = 3;
-	repeated Projectile projectiles = 4;
+  Position size = 1;
+	repeated Tile tiles = 2;
+	repeated Unit ally_units = 3;
+	repeated Unit enemy_units = 4;
+	repeated Projectile projectiles = 5;
 }
 
 message State {

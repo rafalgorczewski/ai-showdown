@@ -668,10 +668,10 @@ class Map final :
 
   // accessors -------------------------------------------------------
 
-  // repeated .eap.Tile tiles = 1;
+  // repeated .eap.Tile tiles = 2;
   int tiles_size() const;
   void clear_tiles();
-  static const int kTilesFieldNumber = 1;
+  static const int kTilesFieldNumber = 2;
   ::eap::Tile* mutable_tiles(int index);
   ::google::protobuf::RepeatedPtrField< ::eap::Tile >*
       mutable_tiles();
@@ -680,10 +680,10 @@ class Map final :
   const ::google::protobuf::RepeatedPtrField< ::eap::Tile >&
       tiles() const;
 
-  // repeated .eap.Unit ally_units = 2;
+  // repeated .eap.Unit ally_units = 3;
   int ally_units_size() const;
   void clear_ally_units();
-  static const int kAllyUnitsFieldNumber = 2;
+  static const int kAllyUnitsFieldNumber = 3;
   ::eap::Unit* mutable_ally_units(int index);
   ::google::protobuf::RepeatedPtrField< ::eap::Unit >*
       mutable_ally_units();
@@ -692,10 +692,10 @@ class Map final :
   const ::google::protobuf::RepeatedPtrField< ::eap::Unit >&
       ally_units() const;
 
-  // repeated .eap.Unit enemy_units = 3;
+  // repeated .eap.Unit enemy_units = 4;
   int enemy_units_size() const;
   void clear_enemy_units();
-  static const int kEnemyUnitsFieldNumber = 3;
+  static const int kEnemyUnitsFieldNumber = 4;
   ::eap::Unit* mutable_enemy_units(int index);
   ::google::protobuf::RepeatedPtrField< ::eap::Unit >*
       mutable_enemy_units();
@@ -704,10 +704,10 @@ class Map final :
   const ::google::protobuf::RepeatedPtrField< ::eap::Unit >&
       enemy_units() const;
 
-  // repeated .eap.Projectile projectiles = 4;
+  // repeated .eap.Projectile projectiles = 5;
   int projectiles_size() const;
   void clear_projectiles();
-  static const int kProjectilesFieldNumber = 4;
+  static const int kProjectilesFieldNumber = 5;
   ::eap::Projectile* mutable_projectiles(int index);
   ::google::protobuf::RepeatedPtrField< ::eap::Projectile >*
       mutable_projectiles();
@@ -715,6 +715,15 @@ class Map final :
   ::eap::Projectile* add_projectiles();
   const ::google::protobuf::RepeatedPtrField< ::eap::Projectile >&
       projectiles() const;
+
+  // .eap.Position size = 1;
+  bool has_size() const;
+  void clear_size();
+  static const int kSizeFieldNumber = 1;
+  const ::eap::Position& size() const;
+  ::eap::Position* release_size();
+  ::eap::Position* mutable_size();
+  void set_allocated_size(::eap::Position* size);
 
   // @@protoc_insertion_point(class_scope:eap.Map)
  private:
@@ -725,6 +734,7 @@ class Map final :
   ::google::protobuf::RepeatedPtrField< ::eap::Unit > ally_units_;
   ::google::protobuf::RepeatedPtrField< ::eap::Unit > enemy_units_;
   ::google::protobuf::RepeatedPtrField< ::eap::Projectile > projectiles_;
+  ::eap::Position* size_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_state_2eproto;
 };
@@ -1040,7 +1050,52 @@ inline void Projectile::set_type(::eap::Projectile_Type value) {
 
 // Map
 
-// repeated .eap.Tile tiles = 1;
+// .eap.Position size = 1;
+inline bool Map::has_size() const {
+  return this != internal_default_instance() && size_ != nullptr;
+}
+inline const ::eap::Position& Map::size() const {
+  const ::eap::Position* p = size_;
+  // @@protoc_insertion_point(field_get:eap.Map.size)
+  return p != nullptr ? *p : *reinterpret_cast<const ::eap::Position*>(
+      &::eap::_Position_default_instance_);
+}
+inline ::eap::Position* Map::release_size() {
+  // @@protoc_insertion_point(field_release:eap.Map.size)
+  
+  ::eap::Position* temp = size_;
+  size_ = nullptr;
+  return temp;
+}
+inline ::eap::Position* Map::mutable_size() {
+  
+  if (size_ == nullptr) {
+    auto* p = CreateMaybeMessage<::eap::Position>(GetArenaNoVirtual());
+    size_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:eap.Map.size)
+  return size_;
+}
+inline void Map::set_allocated_size(::eap::Position* size) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(size_);
+  }
+  if (size) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      size = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, size, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  size_ = size;
+  // @@protoc_insertion_point(field_set_allocated:eap.Map.size)
+}
+
+// repeated .eap.Tile tiles = 2;
 inline int Map::tiles_size() const {
   return tiles_.size();
 }
@@ -1070,7 +1125,7 @@ Map::tiles() const {
   return tiles_;
 }
 
-// repeated .eap.Unit ally_units = 2;
+// repeated .eap.Unit ally_units = 3;
 inline int Map::ally_units_size() const {
   return ally_units_.size();
 }
@@ -1100,7 +1155,7 @@ Map::ally_units() const {
   return ally_units_;
 }
 
-// repeated .eap.Unit enemy_units = 3;
+// repeated .eap.Unit enemy_units = 4;
 inline int Map::enemy_units_size() const {
   return enemy_units_.size();
 }
@@ -1130,7 +1185,7 @@ Map::enemy_units() const {
   return enemy_units_;
 }
 
-// repeated .eap.Projectile projectiles = 4;
+// repeated .eap.Projectile projectiles = 5;
 inline int Map::projectiles_size() const {
   return projectiles_.size();
 }

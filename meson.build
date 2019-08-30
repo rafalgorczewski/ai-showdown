@@ -26,6 +26,7 @@ elif get_option('buildtype') == 'release'
 endif
 
 protos_src = ['protos-cpp/common.pb.cc', 'protos-cpp/state.pb.cc', 'protos-cpp/result.pb.cc']
+engine_src = ['src/engine.cpp']
 
 sources = [ protos_src ]
 
