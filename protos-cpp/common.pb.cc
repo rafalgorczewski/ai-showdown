@@ -16,19 +16,21 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
+namespace eap {
 class PositionDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Position> _instance;
 } _Position_default_instance_;
+}  // namespace eap
 static void InitDefaultsPosition_common_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::_Position_default_instance_;
-    new (ptr) ::Position();
+    void* ptr = &::eap::_Position_default_instance_;
+    new (ptr) ::eap::Position();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::Position::InitAsDefaultInstance();
+  ::eap::Position::InitAsDefaultInstance();
 }
 
 ::google::protobuf::internal::SCCInfo<0> scc_info_Position_common_2eproto =
@@ -44,19 +46,19 @@ constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descr
 
 const ::google::protobuf::uint32 TableStruct_common_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Position, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::eap::Position, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::Position, x_),
-  PROTOBUF_FIELD_OFFSET(::Position, y_),
+  PROTOBUF_FIELD_OFFSET(::eap::Position, x_),
+  PROTOBUF_FIELD_OFFSET(::eap::Position, y_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::Position)},
+  { 0, -1, sizeof(::eap::Position)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::_Position_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::eap::_Position_default_instance_),
 };
 
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_common_2eproto = {
@@ -66,13 +68,13 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 };
 
 const char descriptor_table_protodef_common_2eproto[] =
-  "\n\014common.proto\" \n\010Position\022\t\n\001x\030\001 \001(\005\022\t\n"
-  "\001y\030\002 \001(\005b\006proto3"
+  "\n\014common.proto\022\003eap\" \n\010Position\022\t\n\001x\030\001 \001"
+  "(\005\022\t\n\001y\030\002 \001(\005b\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_common_2eproto = {
   false, InitDefaults_common_2eproto, 
   descriptor_table_protodef_common_2eproto,
-  "common.proto", &assign_descriptors_table_common_2eproto, 56,
+  "common.proto", &assign_descriptors_table_common_2eproto, 61,
 };
 
 void AddDescriptors_common_2eproto() {
@@ -84,6 +86,7 @@ void AddDescriptors_common_2eproto() {
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_common_2eproto = []() { AddDescriptors_common_2eproto(); return true; }();
+namespace eap {
 
 // ===================================================================
 
@@ -101,7 +104,7 @@ const int Position::kYFieldNumber;
 Position::Position()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:Position)
+  // @@protoc_insertion_point(constructor:eap.Position)
 }
 Position::Position(const Position& from)
   : ::google::protobuf::Message(),
@@ -110,7 +113,7 @@ Position::Position(const Position& from)
   ::memcpy(&x_, &from.x_,
     static_cast<size_t>(reinterpret_cast<char*>(&y_) -
     reinterpret_cast<char*>(&x_)) + sizeof(y_));
-  // @@protoc_insertion_point(copy_constructor:Position)
+  // @@protoc_insertion_point(copy_constructor:eap.Position)
 }
 
 void Position::SharedCtor() {
@@ -120,7 +123,7 @@ void Position::SharedCtor() {
 }
 
 Position::~Position() {
-  // @@protoc_insertion_point(destructor:Position)
+  // @@protoc_insertion_point(destructor:eap.Position)
   SharedDtor();
 }
 
@@ -137,7 +140,7 @@ const Position& Position::default_instance() {
 
 
 void Position::Clear() {
-// @@protoc_insertion_point(message_clear_start:Position)
+// @@protoc_insertion_point(message_clear_start:eap.Position)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -196,7 +199,7 @@ bool Position::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Position)
+  // @@protoc_insertion_point(parse_start:eap.Position)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -240,10 +243,10 @@ bool Position::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:Position)
+  // @@protoc_insertion_point(parse_success:eap.Position)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:Position)
+  // @@protoc_insertion_point(parse_failure:eap.Position)
   return false;
 #undef DO_
 }
@@ -251,7 +254,7 @@ failure:
 
 void Position::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Position)
+  // @@protoc_insertion_point(serialize_start:eap.Position)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -269,12 +272,12 @@ void Position::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:Position)
+  // @@protoc_insertion_point(serialize_end:eap.Position)
 }
 
 ::google::protobuf::uint8* Position::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Position)
+  // @@protoc_insertion_point(serialize_to_array_start:eap.Position)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -292,12 +295,12 @@ void Position::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Position)
+  // @@protoc_insertion_point(serialize_to_array_end:eap.Position)
   return target;
 }
 
 size_t Position::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Position)
+// @@protoc_insertion_point(message_byte_size_start:eap.Position)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -329,22 +332,22 @@ size_t Position::ByteSizeLong() const {
 }
 
 void Position::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:Position)
+// @@protoc_insertion_point(generalized_merge_from_start:eap.Position)
   GOOGLE_DCHECK_NE(&from, this);
   const Position* source =
       ::google::protobuf::DynamicCastToGenerated<Position>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Position)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:eap.Position)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:Position)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:eap.Position)
     MergeFrom(*source);
   }
 }
 
 void Position::MergeFrom(const Position& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:Position)
+// @@protoc_insertion_point(class_specific_merge_from_start:eap.Position)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -359,14 +362,14 @@ void Position::MergeFrom(const Position& from) {
 }
 
 void Position::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:Position)
+// @@protoc_insertion_point(generalized_copy_from_start:eap.Position)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Position::CopyFrom(const Position& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Position)
+// @@protoc_insertion_point(class_specific_copy_from_start:eap.Position)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -394,10 +397,11 @@ void Position::InternalSwap(Position* other) {
 
 
 // @@protoc_insertion_point(namespace_scope)
+}  // namespace eap
 namespace google {
 namespace protobuf {
-template<> PROTOBUF_NOINLINE ::Position* Arena::CreateMaybeMessage< ::Position >(Arena* arena) {
-  return Arena::CreateInternal< ::Position >(arena);
+template<> PROTOBUF_NOINLINE ::eap::Position* Arena::CreateMaybeMessage< ::eap::Position >(Arena* arena) {
+  return Arena::CreateInternal< ::eap::Position >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

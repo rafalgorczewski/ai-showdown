@@ -2,6 +2,8 @@ syntax = "proto3";
 
 import "common.proto";
 
+package eap;
+
 message Action {
 	int32 entity_id = 1;
 	Position target_position = 2;

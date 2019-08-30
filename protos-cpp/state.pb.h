@@ -50,6 +50,7 @@ struct TableStruct_state_2eproto {
   static const ::google::protobuf::uint32 offsets[];
 };
 void AddDescriptors_state_2eproto();
+namespace eap {
 class Map;
 class MapDefaultTypeInternal;
 extern MapDefaultTypeInternal _Map_default_instance_;
@@ -65,15 +66,17 @@ extern TileDefaultTypeInternal _Tile_default_instance_;
 class Unit;
 class UnitDefaultTypeInternal;
 extern UnitDefaultTypeInternal _Unit_default_instance_;
+}  // namespace eap
 namespace google {
 namespace protobuf {
-template<> ::Map* Arena::CreateMaybeMessage<::Map>(Arena*);
-template<> ::Projectile* Arena::CreateMaybeMessage<::Projectile>(Arena*);
-template<> ::State* Arena::CreateMaybeMessage<::State>(Arena*);
-template<> ::Tile* Arena::CreateMaybeMessage<::Tile>(Arena*);
-template<> ::Unit* Arena::CreateMaybeMessage<::Unit>(Arena*);
+template<> ::eap::Map* Arena::CreateMaybeMessage<::eap::Map>(Arena*);
+template<> ::eap::Projectile* Arena::CreateMaybeMessage<::eap::Projectile>(Arena*);
+template<> ::eap::State* Arena::CreateMaybeMessage<::eap::State>(Arena*);
+template<> ::eap::Tile* Arena::CreateMaybeMessage<::eap::Tile>(Arena*);
+template<> ::eap::Unit* Arena::CreateMaybeMessage<::eap::Unit>(Arena*);
 }  // namespace protobuf
 }  // namespace google
+namespace eap {
 
 enum Tile_Type {
   Tile_Type_FLOOR = 0,
@@ -142,7 +145,7 @@ inline bool Class_Parse(
 // ===================================================================
 
 class Unit final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Unit) */ {
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:eap.Unit) */ {
  public:
   Unit();
   virtual ~Unit();
@@ -236,14 +239,14 @@ class Unit final :
 
   // accessors -------------------------------------------------------
 
-  // .Position position = 2;
+  // .eap.Position position = 2;
   bool has_position() const;
   void clear_position();
   static const int kPositionFieldNumber = 2;
-  const ::Position& position() const;
-  ::Position* release_position();
-  ::Position* mutable_position();
-  void set_allocated_position(::Position* position);
+  const ::eap::Position& position() const;
+  ::eap::Position* release_position();
+  ::eap::Position* mutable_position();
+  void set_allocated_position(::eap::Position* position);
 
   // int32 id = 1;
   void clear_id();
@@ -251,11 +254,11 @@ class Unit final :
   ::google::protobuf::int32 id() const;
   void set_id(::google::protobuf::int32 value);
 
-  // .Class class = 3;
+  // .eap.Class class = 3;
   void clear_class_();
   static const int kClassFieldNumber = 3;
-  ::Class class_() const;
-  void set_class_(::Class value);
+  ::eap::Class class_() const;
+  void set_class_(::eap::Class value);
 
   // int32 health = 4;
   void clear_health();
@@ -263,12 +266,12 @@ class Unit final :
   ::google::protobuf::int32 health() const;
   void set_health(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:Unit)
+  // @@protoc_insertion_point(class_scope:eap.Unit)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::Position* position_;
+  ::eap::Position* position_;
   ::google::protobuf::int32 id_;
   int class__;
   ::google::protobuf::int32 health_;
@@ -278,7 +281,7 @@ class Unit final :
 // -------------------------------------------------------------------
 
 class Tile final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Tile) */ {
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:eap.Tile) */ {
  public:
   Tile();
   virtual ~Tile();
@@ -400,27 +403,27 @@ class Tile final :
 
   // accessors -------------------------------------------------------
 
-  // .Position position = 2;
+  // .eap.Position position = 2;
   bool has_position() const;
   void clear_position();
   static const int kPositionFieldNumber = 2;
-  const ::Position& position() const;
-  ::Position* release_position();
-  ::Position* mutable_position();
-  void set_allocated_position(::Position* position);
+  const ::eap::Position& position() const;
+  ::eap::Position* release_position();
+  ::eap::Position* mutable_position();
+  void set_allocated_position(::eap::Position* position);
 
-  // .Tile.Type type = 1;
+  // .eap.Tile.Type type = 1;
   void clear_type();
   static const int kTypeFieldNumber = 1;
-  ::Tile_Type type() const;
-  void set_type(::Tile_Type value);
+  ::eap::Tile_Type type() const;
+  void set_type(::eap::Tile_Type value);
 
-  // @@protoc_insertion_point(class_scope:Tile)
+  // @@protoc_insertion_point(class_scope:eap.Tile)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::Position* position_;
+  ::eap::Position* position_;
   int type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_state_2eproto;
@@ -428,7 +431,7 @@ class Tile final :
 // -------------------------------------------------------------------
 
 class Projectile final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Projectile) */ {
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:eap.Projectile) */ {
  public:
   Projectile();
   virtual ~Projectile();
@@ -552,13 +555,13 @@ class Projectile final :
   ::google::protobuf::int32 thrown_by_unit_id() const;
   void set_thrown_by_unit_id(::google::protobuf::int32 value);
 
-  // .Projectile.Type type = 2;
+  // .eap.Projectile.Type type = 2;
   void clear_type();
   static const int kTypeFieldNumber = 2;
-  ::Projectile_Type type() const;
-  void set_type(::Projectile_Type value);
+  ::eap::Projectile_Type type() const;
+  void set_type(::eap::Projectile_Type value);
 
-  // @@protoc_insertion_point(class_scope:Projectile)
+  // @@protoc_insertion_point(class_scope:eap.Projectile)
  private:
   class HasBitSetters;
 
@@ -571,7 +574,7 @@ class Projectile final :
 // -------------------------------------------------------------------
 
 class Map final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Map) */ {
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:eap.Map) */ {
  public:
   Map();
   virtual ~Map();
@@ -665,70 +668,70 @@ class Map final :
 
   // accessors -------------------------------------------------------
 
-  // repeated .Tile tiles = 1;
+  // repeated .eap.Tile tiles = 1;
   int tiles_size() const;
   void clear_tiles();
   static const int kTilesFieldNumber = 1;
-  ::Tile* mutable_tiles(int index);
-  ::google::protobuf::RepeatedPtrField< ::Tile >*
+  ::eap::Tile* mutable_tiles(int index);
+  ::google::protobuf::RepeatedPtrField< ::eap::Tile >*
       mutable_tiles();
-  const ::Tile& tiles(int index) const;
-  ::Tile* add_tiles();
-  const ::google::protobuf::RepeatedPtrField< ::Tile >&
+  const ::eap::Tile& tiles(int index) const;
+  ::eap::Tile* add_tiles();
+  const ::google::protobuf::RepeatedPtrField< ::eap::Tile >&
       tiles() const;
 
-  // repeated .Unit ally_units = 2;
+  // repeated .eap.Unit ally_units = 2;
   int ally_units_size() const;
   void clear_ally_units();
   static const int kAllyUnitsFieldNumber = 2;
-  ::Unit* mutable_ally_units(int index);
-  ::google::protobuf::RepeatedPtrField< ::Unit >*
+  ::eap::Unit* mutable_ally_units(int index);
+  ::google::protobuf::RepeatedPtrField< ::eap::Unit >*
       mutable_ally_units();
-  const ::Unit& ally_units(int index) const;
-  ::Unit* add_ally_units();
-  const ::google::protobuf::RepeatedPtrField< ::Unit >&
+  const ::eap::Unit& ally_units(int index) const;
+  ::eap::Unit* add_ally_units();
+  const ::google::protobuf::RepeatedPtrField< ::eap::Unit >&
       ally_units() const;
 
-  // repeated .Unit enemy_units = 3;
+  // repeated .eap.Unit enemy_units = 3;
   int enemy_units_size() const;
   void clear_enemy_units();
   static const int kEnemyUnitsFieldNumber = 3;
-  ::Unit* mutable_enemy_units(int index);
-  ::google::protobuf::RepeatedPtrField< ::Unit >*
+  ::eap::Unit* mutable_enemy_units(int index);
+  ::google::protobuf::RepeatedPtrField< ::eap::Unit >*
       mutable_enemy_units();
-  const ::Unit& enemy_units(int index) const;
-  ::Unit* add_enemy_units();
-  const ::google::protobuf::RepeatedPtrField< ::Unit >&
+  const ::eap::Unit& enemy_units(int index) const;
+  ::eap::Unit* add_enemy_units();
+  const ::google::protobuf::RepeatedPtrField< ::eap::Unit >&
       enemy_units() const;
 
-  // repeated .Projectile projectiles = 4;
+  // repeated .eap.Projectile projectiles = 4;
   int projectiles_size() const;
   void clear_projectiles();
   static const int kProjectilesFieldNumber = 4;
-  ::Projectile* mutable_projectiles(int index);
-  ::google::protobuf::RepeatedPtrField< ::Projectile >*
+  ::eap::Projectile* mutable_projectiles(int index);
+  ::google::protobuf::RepeatedPtrField< ::eap::Projectile >*
       mutable_projectiles();
-  const ::Projectile& projectiles(int index) const;
-  ::Projectile* add_projectiles();
-  const ::google::protobuf::RepeatedPtrField< ::Projectile >&
+  const ::eap::Projectile& projectiles(int index) const;
+  ::eap::Projectile* add_projectiles();
+  const ::google::protobuf::RepeatedPtrField< ::eap::Projectile >&
       projectiles() const;
 
-  // @@protoc_insertion_point(class_scope:Map)
+  // @@protoc_insertion_point(class_scope:eap.Map)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::Tile > tiles_;
-  ::google::protobuf::RepeatedPtrField< ::Unit > ally_units_;
-  ::google::protobuf::RepeatedPtrField< ::Unit > enemy_units_;
-  ::google::protobuf::RepeatedPtrField< ::Projectile > projectiles_;
+  ::google::protobuf::RepeatedPtrField< ::eap::Tile > tiles_;
+  ::google::protobuf::RepeatedPtrField< ::eap::Unit > ally_units_;
+  ::google::protobuf::RepeatedPtrField< ::eap::Unit > enemy_units_;
+  ::google::protobuf::RepeatedPtrField< ::eap::Projectile > projectiles_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_state_2eproto;
 };
 // -------------------------------------------------------------------
 
 class State final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:State) */ {
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:eap.State) */ {
  public:
   State();
   virtual ~State();
@@ -822,21 +825,21 @@ class State final :
 
   // accessors -------------------------------------------------------
 
-  // .Map map = 1;
+  // .eap.Map map = 1;
   bool has_map() const;
   void clear_map();
   static const int kMapFieldNumber = 1;
-  const ::Map& map() const;
-  ::Map* release_map();
-  ::Map* mutable_map();
-  void set_allocated_map(::Map* map);
+  const ::eap::Map& map() const;
+  ::eap::Map* release_map();
+  ::eap::Map* mutable_map();
+  void set_allocated_map(::eap::Map* map);
 
-  // @@protoc_insertion_point(class_scope:State)
+  // @@protoc_insertion_point(class_scope:eap.State)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::Map* map_;
+  ::eap::Map* map_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_state_2eproto;
 };
@@ -856,42 +859,42 @@ inline void Unit::clear_id() {
   id_ = 0;
 }
 inline ::google::protobuf::int32 Unit::id() const {
-  // @@protoc_insertion_point(field_get:Unit.id)
+  // @@protoc_insertion_point(field_get:eap.Unit.id)
   return id_;
 }
 inline void Unit::set_id(::google::protobuf::int32 value) {
   
   id_ = value;
-  // @@protoc_insertion_point(field_set:Unit.id)
+  // @@protoc_insertion_point(field_set:eap.Unit.id)
 }
 
-// .Position position = 2;
+// .eap.Position position = 2;
 inline bool Unit::has_position() const {
   return this != internal_default_instance() && position_ != nullptr;
 }
-inline const ::Position& Unit::position() const {
-  const ::Position* p = position_;
-  // @@protoc_insertion_point(field_get:Unit.position)
-  return p != nullptr ? *p : *reinterpret_cast<const ::Position*>(
-      &::_Position_default_instance_);
+inline const ::eap::Position& Unit::position() const {
+  const ::eap::Position* p = position_;
+  // @@protoc_insertion_point(field_get:eap.Unit.position)
+  return p != nullptr ? *p : *reinterpret_cast<const ::eap::Position*>(
+      &::eap::_Position_default_instance_);
 }
-inline ::Position* Unit::release_position() {
-  // @@protoc_insertion_point(field_release:Unit.position)
+inline ::eap::Position* Unit::release_position() {
+  // @@protoc_insertion_point(field_release:eap.Unit.position)
   
-  ::Position* temp = position_;
+  ::eap::Position* temp = position_;
   position_ = nullptr;
   return temp;
 }
-inline ::Position* Unit::mutable_position() {
+inline ::eap::Position* Unit::mutable_position() {
   
   if (position_ == nullptr) {
-    auto* p = CreateMaybeMessage<::Position>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::eap::Position>(GetArenaNoVirtual());
     position_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:Unit.position)
+  // @@protoc_insertion_point(field_mutable:eap.Unit.position)
   return position_;
 }
-inline void Unit::set_allocated_position(::Position* position) {
+inline void Unit::set_allocated_position(::eap::Position* position) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(position_);
@@ -907,21 +910,21 @@ inline void Unit::set_allocated_position(::Position* position) {
     
   }
   position_ = position;
-  // @@protoc_insertion_point(field_set_allocated:Unit.position)
+  // @@protoc_insertion_point(field_set_allocated:eap.Unit.position)
 }
 
-// .Class class = 3;
+// .eap.Class class = 3;
 inline void Unit::clear_class_() {
   class__ = 0;
 }
-inline ::Class Unit::class_() const {
-  // @@protoc_insertion_point(field_get:Unit.class)
-  return static_cast< ::Class >(class__);
+inline ::eap::Class Unit::class_() const {
+  // @@protoc_insertion_point(field_get:eap.Unit.class)
+  return static_cast< ::eap::Class >(class__);
 }
-inline void Unit::set_class_(::Class value) {
+inline void Unit::set_class_(::eap::Class value) {
   
   class__ = value;
-  // @@protoc_insertion_point(field_set:Unit.class)
+  // @@protoc_insertion_point(field_set:eap.Unit.class)
 }
 
 // int32 health = 4;
@@ -929,60 +932,60 @@ inline void Unit::clear_health() {
   health_ = 0;
 }
 inline ::google::protobuf::int32 Unit::health() const {
-  // @@protoc_insertion_point(field_get:Unit.health)
+  // @@protoc_insertion_point(field_get:eap.Unit.health)
   return health_;
 }
 inline void Unit::set_health(::google::protobuf::int32 value) {
   
   health_ = value;
-  // @@protoc_insertion_point(field_set:Unit.health)
+  // @@protoc_insertion_point(field_set:eap.Unit.health)
 }
 
 // -------------------------------------------------------------------
 
 // Tile
 
-// .Tile.Type type = 1;
+// .eap.Tile.Type type = 1;
 inline void Tile::clear_type() {
   type_ = 0;
 }
-inline ::Tile_Type Tile::type() const {
-  // @@protoc_insertion_point(field_get:Tile.type)
-  return static_cast< ::Tile_Type >(type_);
+inline ::eap::Tile_Type Tile::type() const {
+  // @@protoc_insertion_point(field_get:eap.Tile.type)
+  return static_cast< ::eap::Tile_Type >(type_);
 }
-inline void Tile::set_type(::Tile_Type value) {
+inline void Tile::set_type(::eap::Tile_Type value) {
   
   type_ = value;
-  // @@protoc_insertion_point(field_set:Tile.type)
+  // @@protoc_insertion_point(field_set:eap.Tile.type)
 }
 
-// .Position position = 2;
+// .eap.Position position = 2;
 inline bool Tile::has_position() const {
   return this != internal_default_instance() && position_ != nullptr;
 }
-inline const ::Position& Tile::position() const {
-  const ::Position* p = position_;
-  // @@protoc_insertion_point(field_get:Tile.position)
-  return p != nullptr ? *p : *reinterpret_cast<const ::Position*>(
-      &::_Position_default_instance_);
+inline const ::eap::Position& Tile::position() const {
+  const ::eap::Position* p = position_;
+  // @@protoc_insertion_point(field_get:eap.Tile.position)
+  return p != nullptr ? *p : *reinterpret_cast<const ::eap::Position*>(
+      &::eap::_Position_default_instance_);
 }
-inline ::Position* Tile::release_position() {
-  // @@protoc_insertion_point(field_release:Tile.position)
+inline ::eap::Position* Tile::release_position() {
+  // @@protoc_insertion_point(field_release:eap.Tile.position)
   
-  ::Position* temp = position_;
+  ::eap::Position* temp = position_;
   position_ = nullptr;
   return temp;
 }
-inline ::Position* Tile::mutable_position() {
+inline ::eap::Position* Tile::mutable_position() {
   
   if (position_ == nullptr) {
-    auto* p = CreateMaybeMessage<::Position>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::eap::Position>(GetArenaNoVirtual());
     position_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:Tile.position)
+  // @@protoc_insertion_point(field_mutable:eap.Tile.position)
   return position_;
 }
-inline void Tile::set_allocated_position(::Position* position) {
+inline void Tile::set_allocated_position(::eap::Position* position) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(position_);
@@ -998,7 +1001,7 @@ inline void Tile::set_allocated_position(::Position* position) {
     
   }
   position_ = position;
-  // @@protoc_insertion_point(field_set_allocated:Tile.position)
+  // @@protoc_insertion_point(field_set_allocated:eap.Tile.position)
 }
 
 // -------------------------------------------------------------------
@@ -1010,150 +1013,150 @@ inline void Projectile::clear_thrown_by_unit_id() {
   thrown_by_unit_id_ = 0;
 }
 inline ::google::protobuf::int32 Projectile::thrown_by_unit_id() const {
-  // @@protoc_insertion_point(field_get:Projectile.thrown_by_unit_id)
+  // @@protoc_insertion_point(field_get:eap.Projectile.thrown_by_unit_id)
   return thrown_by_unit_id_;
 }
 inline void Projectile::set_thrown_by_unit_id(::google::protobuf::int32 value) {
   
   thrown_by_unit_id_ = value;
-  // @@protoc_insertion_point(field_set:Projectile.thrown_by_unit_id)
+  // @@protoc_insertion_point(field_set:eap.Projectile.thrown_by_unit_id)
 }
 
-// .Projectile.Type type = 2;
+// .eap.Projectile.Type type = 2;
 inline void Projectile::clear_type() {
   type_ = 0;
 }
-inline ::Projectile_Type Projectile::type() const {
-  // @@protoc_insertion_point(field_get:Projectile.type)
-  return static_cast< ::Projectile_Type >(type_);
+inline ::eap::Projectile_Type Projectile::type() const {
+  // @@protoc_insertion_point(field_get:eap.Projectile.type)
+  return static_cast< ::eap::Projectile_Type >(type_);
 }
-inline void Projectile::set_type(::Projectile_Type value) {
+inline void Projectile::set_type(::eap::Projectile_Type value) {
   
   type_ = value;
-  // @@protoc_insertion_point(field_set:Projectile.type)
+  // @@protoc_insertion_point(field_set:eap.Projectile.type)
 }
 
 // -------------------------------------------------------------------
 
 // Map
 
-// repeated .Tile tiles = 1;
+// repeated .eap.Tile tiles = 1;
 inline int Map::tiles_size() const {
   return tiles_.size();
 }
 inline void Map::clear_tiles() {
   tiles_.Clear();
 }
-inline ::Tile* Map::mutable_tiles(int index) {
-  // @@protoc_insertion_point(field_mutable:Map.tiles)
+inline ::eap::Tile* Map::mutable_tiles(int index) {
+  // @@protoc_insertion_point(field_mutable:eap.Map.tiles)
   return tiles_.Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField< ::Tile >*
+inline ::google::protobuf::RepeatedPtrField< ::eap::Tile >*
 Map::mutable_tiles() {
-  // @@protoc_insertion_point(field_mutable_list:Map.tiles)
+  // @@protoc_insertion_point(field_mutable_list:eap.Map.tiles)
   return &tiles_;
 }
-inline const ::Tile& Map::tiles(int index) const {
-  // @@protoc_insertion_point(field_get:Map.tiles)
+inline const ::eap::Tile& Map::tiles(int index) const {
+  // @@protoc_insertion_point(field_get:eap.Map.tiles)
   return tiles_.Get(index);
 }
-inline ::Tile* Map::add_tiles() {
-  // @@protoc_insertion_point(field_add:Map.tiles)
+inline ::eap::Tile* Map::add_tiles() {
+  // @@protoc_insertion_point(field_add:eap.Map.tiles)
   return tiles_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::Tile >&
+inline const ::google::protobuf::RepeatedPtrField< ::eap::Tile >&
 Map::tiles() const {
-  // @@protoc_insertion_point(field_list:Map.tiles)
+  // @@protoc_insertion_point(field_list:eap.Map.tiles)
   return tiles_;
 }
 
-// repeated .Unit ally_units = 2;
+// repeated .eap.Unit ally_units = 2;
 inline int Map::ally_units_size() const {
   return ally_units_.size();
 }
 inline void Map::clear_ally_units() {
   ally_units_.Clear();
 }
-inline ::Unit* Map::mutable_ally_units(int index) {
-  // @@protoc_insertion_point(field_mutable:Map.ally_units)
+inline ::eap::Unit* Map::mutable_ally_units(int index) {
+  // @@protoc_insertion_point(field_mutable:eap.Map.ally_units)
   return ally_units_.Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField< ::Unit >*
+inline ::google::protobuf::RepeatedPtrField< ::eap::Unit >*
 Map::mutable_ally_units() {
-  // @@protoc_insertion_point(field_mutable_list:Map.ally_units)
+  // @@protoc_insertion_point(field_mutable_list:eap.Map.ally_units)
   return &ally_units_;
 }
-inline const ::Unit& Map::ally_units(int index) const {
-  // @@protoc_insertion_point(field_get:Map.ally_units)
+inline const ::eap::Unit& Map::ally_units(int index) const {
+  // @@protoc_insertion_point(field_get:eap.Map.ally_units)
   return ally_units_.Get(index);
 }
-inline ::Unit* Map::add_ally_units() {
-  // @@protoc_insertion_point(field_add:Map.ally_units)
+inline ::eap::Unit* Map::add_ally_units() {
+  // @@protoc_insertion_point(field_add:eap.Map.ally_units)
   return ally_units_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::Unit >&
+inline const ::google::protobuf::RepeatedPtrField< ::eap::Unit >&
 Map::ally_units() const {
-  // @@protoc_insertion_point(field_list:Map.ally_units)
+  // @@protoc_insertion_point(field_list:eap.Map.ally_units)
   return ally_units_;
 }
 
-// repeated .Unit enemy_units = 3;
+// repeated .eap.Unit enemy_units = 3;
 inline int Map::enemy_units_size() const {
   return enemy_units_.size();
 }
 inline void Map::clear_enemy_units() {
   enemy_units_.Clear();
 }
-inline ::Unit* Map::mutable_enemy_units(int index) {
-  // @@protoc_insertion_point(field_mutable:Map.enemy_units)
+inline ::eap::Unit* Map::mutable_enemy_units(int index) {
+  // @@protoc_insertion_point(field_mutable:eap.Map.enemy_units)
   return enemy_units_.Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField< ::Unit >*
+inline ::google::protobuf::RepeatedPtrField< ::eap::Unit >*
 Map::mutable_enemy_units() {
-  // @@protoc_insertion_point(field_mutable_list:Map.enemy_units)
+  // @@protoc_insertion_point(field_mutable_list:eap.Map.enemy_units)
   return &enemy_units_;
 }
-inline const ::Unit& Map::enemy_units(int index) const {
-  // @@protoc_insertion_point(field_get:Map.enemy_units)
+inline const ::eap::Unit& Map::enemy_units(int index) const {
+  // @@protoc_insertion_point(field_get:eap.Map.enemy_units)
   return enemy_units_.Get(index);
 }
-inline ::Unit* Map::add_enemy_units() {
-  // @@protoc_insertion_point(field_add:Map.enemy_units)
+inline ::eap::Unit* Map::add_enemy_units() {
+  // @@protoc_insertion_point(field_add:eap.Map.enemy_units)
   return enemy_units_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::Unit >&
+inline const ::google::protobuf::RepeatedPtrField< ::eap::Unit >&
 Map::enemy_units() const {
-  // @@protoc_insertion_point(field_list:Map.enemy_units)
+  // @@protoc_insertion_point(field_list:eap.Map.enemy_units)
   return enemy_units_;
 }
 
-// repeated .Projectile projectiles = 4;
+// repeated .eap.Projectile projectiles = 4;
 inline int Map::projectiles_size() const {
   return projectiles_.size();
 }
 inline void Map::clear_projectiles() {
   projectiles_.Clear();
 }
-inline ::Projectile* Map::mutable_projectiles(int index) {
-  // @@protoc_insertion_point(field_mutable:Map.projectiles)
+inline ::eap::Projectile* Map::mutable_projectiles(int index) {
+  // @@protoc_insertion_point(field_mutable:eap.Map.projectiles)
   return projectiles_.Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField< ::Projectile >*
+inline ::google::protobuf::RepeatedPtrField< ::eap::Projectile >*
 Map::mutable_projectiles() {
-  // @@protoc_insertion_point(field_mutable_list:Map.projectiles)
+  // @@protoc_insertion_point(field_mutable_list:eap.Map.projectiles)
   return &projectiles_;
 }
-inline const ::Projectile& Map::projectiles(int index) const {
-  // @@protoc_insertion_point(field_get:Map.projectiles)
+inline const ::eap::Projectile& Map::projectiles(int index) const {
+  // @@protoc_insertion_point(field_get:eap.Map.projectiles)
   return projectiles_.Get(index);
 }
-inline ::Projectile* Map::add_projectiles() {
-  // @@protoc_insertion_point(field_add:Map.projectiles)
+inline ::eap::Projectile* Map::add_projectiles() {
+  // @@protoc_insertion_point(field_add:eap.Map.projectiles)
   return projectiles_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::Projectile >&
+inline const ::google::protobuf::RepeatedPtrField< ::eap::Projectile >&
 Map::projectiles() const {
-  // @@protoc_insertion_point(field_list:Map.projectiles)
+  // @@protoc_insertion_point(field_list:eap.Map.projectiles)
   return projectiles_;
 }
 
@@ -1161,7 +1164,7 @@ Map::projectiles() const {
 
 // State
 
-// .Map map = 1;
+// .eap.Map map = 1;
 inline bool State::has_map() const {
   return this != internal_default_instance() && map_ != nullptr;
 }
@@ -1171,29 +1174,29 @@ inline void State::clear_map() {
   }
   map_ = nullptr;
 }
-inline const ::Map& State::map() const {
-  const ::Map* p = map_;
-  // @@protoc_insertion_point(field_get:State.map)
-  return p != nullptr ? *p : *reinterpret_cast<const ::Map*>(
-      &::_Map_default_instance_);
+inline const ::eap::Map& State::map() const {
+  const ::eap::Map* p = map_;
+  // @@protoc_insertion_point(field_get:eap.State.map)
+  return p != nullptr ? *p : *reinterpret_cast<const ::eap::Map*>(
+      &::eap::_Map_default_instance_);
 }
-inline ::Map* State::release_map() {
-  // @@protoc_insertion_point(field_release:State.map)
+inline ::eap::Map* State::release_map() {
+  // @@protoc_insertion_point(field_release:eap.State.map)
   
-  ::Map* temp = map_;
+  ::eap::Map* temp = map_;
   map_ = nullptr;
   return temp;
 }
-inline ::Map* State::mutable_map() {
+inline ::eap::Map* State::mutable_map() {
   
   if (map_ == nullptr) {
-    auto* p = CreateMaybeMessage<::Map>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::eap::Map>(GetArenaNoVirtual());
     map_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:State.map)
+  // @@protoc_insertion_point(field_mutable:eap.State.map)
   return map_;
 }
-inline void State::set_allocated_map(::Map* map) {
+inline void State::set_allocated_map(::eap::Map* map) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete map_;
@@ -1209,7 +1212,7 @@ inline void State::set_allocated_map(::Map* map) {
     
   }
   map_ = map;
-  // @@protoc_insertion_point(field_set_allocated:State.map)
+  // @@protoc_insertion_point(field_set_allocated:eap.State.map)
 }
 
 #ifdef __GNUC__
@@ -1226,24 +1229,25 @@ inline void State::set_allocated_map(::Map* map) {
 
 // @@protoc_insertion_point(namespace_scope)
 
+}  // namespace eap
 
 namespace google {
 namespace protobuf {
 
-template <> struct is_proto_enum< ::Tile_Type> : ::std::true_type {};
+template <> struct is_proto_enum< ::eap::Tile_Type> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::Tile_Type>() {
-  return ::Tile_Type_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::eap::Tile_Type>() {
+  return ::eap::Tile_Type_descriptor();
 }
-template <> struct is_proto_enum< ::Projectile_Type> : ::std::true_type {};
+template <> struct is_proto_enum< ::eap::Projectile_Type> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::Projectile_Type>() {
-  return ::Projectile_Type_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::eap::Projectile_Type>() {
+  return ::eap::Projectile_Type_descriptor();
 }
-template <> struct is_proto_enum< ::Class> : ::std::true_type {};
+template <> struct is_proto_enum< ::eap::Class> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::Class>() {
-  return ::Class_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::eap::Class>() {
+  return ::eap::Class_descriptor();
 }
 
 }  // namespace protobuf

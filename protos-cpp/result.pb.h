@@ -50,18 +50,21 @@ struct TableStruct_result_2eproto {
   static const ::google::protobuf::uint32 offsets[];
 };
 void AddDescriptors_result_2eproto();
+namespace eap {
 class Action;
 class ActionDefaultTypeInternal;
 extern ActionDefaultTypeInternal _Action_default_instance_;
 class Result;
 class ResultDefaultTypeInternal;
 extern ResultDefaultTypeInternal _Result_default_instance_;
+}  // namespace eap
 namespace google {
 namespace protobuf {
-template<> ::Action* Arena::CreateMaybeMessage<::Action>(Arena*);
-template<> ::Result* Arena::CreateMaybeMessage<::Result>(Arena*);
+template<> ::eap::Action* Arena::CreateMaybeMessage<::eap::Action>(Arena*);
+template<> ::eap::Result* Arena::CreateMaybeMessage<::eap::Result>(Arena*);
 }  // namespace protobuf
 }  // namespace google
+namespace eap {
 
 enum Action_Type {
   Action_Type_MOVEMENT = 0,
@@ -87,7 +90,7 @@ inline bool Action_Type_Parse(
 // ===================================================================
 
 class Action final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Action) */ {
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:eap.Action) */ {
  public:
   Action();
   virtual ~Action();
@@ -207,14 +210,14 @@ class Action final :
 
   // accessors -------------------------------------------------------
 
-  // .Position target_position = 2;
+  // .eap.Position target_position = 2;
   bool has_target_position() const;
   void clear_target_position();
   static const int kTargetPositionFieldNumber = 2;
-  const ::Position& target_position() const;
-  ::Position* release_target_position();
-  ::Position* mutable_target_position();
-  void set_allocated_target_position(::Position* target_position);
+  const ::eap::Position& target_position() const;
+  ::eap::Position* release_target_position();
+  ::eap::Position* mutable_target_position();
+  void set_allocated_target_position(::eap::Position* target_position);
 
   // int32 entity_id = 1;
   void clear_entity_id();
@@ -222,18 +225,18 @@ class Action final :
   ::google::protobuf::int32 entity_id() const;
   void set_entity_id(::google::protobuf::int32 value);
 
-  // .Action.Type type = 3;
+  // .eap.Action.Type type = 3;
   void clear_type();
   static const int kTypeFieldNumber = 3;
-  ::Action_Type type() const;
-  void set_type(::Action_Type value);
+  ::eap::Action_Type type() const;
+  void set_type(::eap::Action_Type value);
 
-  // @@protoc_insertion_point(class_scope:Action)
+  // @@protoc_insertion_point(class_scope:eap.Action)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::Position* target_position_;
+  ::eap::Position* target_position_;
   ::google::protobuf::int32 entity_id_;
   int type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -242,7 +245,7 @@ class Action final :
 // -------------------------------------------------------------------
 
 class Result final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Result) */ {
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:eap.Result) */ {
  public:
   Result();
   virtual ~Result();
@@ -336,24 +339,24 @@ class Result final :
 
   // accessors -------------------------------------------------------
 
-  // repeated .Action actions = 1;
+  // repeated .eap.Action actions = 1;
   int actions_size() const;
   void clear_actions();
   static const int kActionsFieldNumber = 1;
-  ::Action* mutable_actions(int index);
-  ::google::protobuf::RepeatedPtrField< ::Action >*
+  ::eap::Action* mutable_actions(int index);
+  ::google::protobuf::RepeatedPtrField< ::eap::Action >*
       mutable_actions();
-  const ::Action& actions(int index) const;
-  ::Action* add_actions();
-  const ::google::protobuf::RepeatedPtrField< ::Action >&
+  const ::eap::Action& actions(int index) const;
+  ::eap::Action* add_actions();
+  const ::google::protobuf::RepeatedPtrField< ::eap::Action >&
       actions() const;
 
-  // @@protoc_insertion_point(class_scope:Result)
+  // @@protoc_insertion_point(class_scope:eap.Result)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::Action > actions_;
+  ::google::protobuf::RepeatedPtrField< ::eap::Action > actions_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_result_2eproto;
 };
@@ -373,42 +376,42 @@ inline void Action::clear_entity_id() {
   entity_id_ = 0;
 }
 inline ::google::protobuf::int32 Action::entity_id() const {
-  // @@protoc_insertion_point(field_get:Action.entity_id)
+  // @@protoc_insertion_point(field_get:eap.Action.entity_id)
   return entity_id_;
 }
 inline void Action::set_entity_id(::google::protobuf::int32 value) {
   
   entity_id_ = value;
-  // @@protoc_insertion_point(field_set:Action.entity_id)
+  // @@protoc_insertion_point(field_set:eap.Action.entity_id)
 }
 
-// .Position target_position = 2;
+// .eap.Position target_position = 2;
 inline bool Action::has_target_position() const {
   return this != internal_default_instance() && target_position_ != nullptr;
 }
-inline const ::Position& Action::target_position() const {
-  const ::Position* p = target_position_;
-  // @@protoc_insertion_point(field_get:Action.target_position)
-  return p != nullptr ? *p : *reinterpret_cast<const ::Position*>(
-      &::_Position_default_instance_);
+inline const ::eap::Position& Action::target_position() const {
+  const ::eap::Position* p = target_position_;
+  // @@protoc_insertion_point(field_get:eap.Action.target_position)
+  return p != nullptr ? *p : *reinterpret_cast<const ::eap::Position*>(
+      &::eap::_Position_default_instance_);
 }
-inline ::Position* Action::release_target_position() {
-  // @@protoc_insertion_point(field_release:Action.target_position)
+inline ::eap::Position* Action::release_target_position() {
+  // @@protoc_insertion_point(field_release:eap.Action.target_position)
   
-  ::Position* temp = target_position_;
+  ::eap::Position* temp = target_position_;
   target_position_ = nullptr;
   return temp;
 }
-inline ::Position* Action::mutable_target_position() {
+inline ::eap::Position* Action::mutable_target_position() {
   
   if (target_position_ == nullptr) {
-    auto* p = CreateMaybeMessage<::Position>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::eap::Position>(GetArenaNoVirtual());
     target_position_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:Action.target_position)
+  // @@protoc_insertion_point(field_mutable:eap.Action.target_position)
   return target_position_;
 }
-inline void Action::set_allocated_target_position(::Position* target_position) {
+inline void Action::set_allocated_target_position(::eap::Position* target_position) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(target_position_);
@@ -424,54 +427,54 @@ inline void Action::set_allocated_target_position(::Position* target_position) {
     
   }
   target_position_ = target_position;
-  // @@protoc_insertion_point(field_set_allocated:Action.target_position)
+  // @@protoc_insertion_point(field_set_allocated:eap.Action.target_position)
 }
 
-// .Action.Type type = 3;
+// .eap.Action.Type type = 3;
 inline void Action::clear_type() {
   type_ = 0;
 }
-inline ::Action_Type Action::type() const {
-  // @@protoc_insertion_point(field_get:Action.type)
-  return static_cast< ::Action_Type >(type_);
+inline ::eap::Action_Type Action::type() const {
+  // @@protoc_insertion_point(field_get:eap.Action.type)
+  return static_cast< ::eap::Action_Type >(type_);
 }
-inline void Action::set_type(::Action_Type value) {
+inline void Action::set_type(::eap::Action_Type value) {
   
   type_ = value;
-  // @@protoc_insertion_point(field_set:Action.type)
+  // @@protoc_insertion_point(field_set:eap.Action.type)
 }
 
 // -------------------------------------------------------------------
 
 // Result
 
-// repeated .Action actions = 1;
+// repeated .eap.Action actions = 1;
 inline int Result::actions_size() const {
   return actions_.size();
 }
 inline void Result::clear_actions() {
   actions_.Clear();
 }
-inline ::Action* Result::mutable_actions(int index) {
-  // @@protoc_insertion_point(field_mutable:Result.actions)
+inline ::eap::Action* Result::mutable_actions(int index) {
+  // @@protoc_insertion_point(field_mutable:eap.Result.actions)
   return actions_.Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField< ::Action >*
+inline ::google::protobuf::RepeatedPtrField< ::eap::Action >*
 Result::mutable_actions() {
-  // @@protoc_insertion_point(field_mutable_list:Result.actions)
+  // @@protoc_insertion_point(field_mutable_list:eap.Result.actions)
   return &actions_;
 }
-inline const ::Action& Result::actions(int index) const {
-  // @@protoc_insertion_point(field_get:Result.actions)
+inline const ::eap::Action& Result::actions(int index) const {
+  // @@protoc_insertion_point(field_get:eap.Result.actions)
   return actions_.Get(index);
 }
-inline ::Action* Result::add_actions() {
-  // @@protoc_insertion_point(field_add:Result.actions)
+inline ::eap::Action* Result::add_actions() {
+  // @@protoc_insertion_point(field_add:eap.Result.actions)
   return actions_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::Action >&
+inline const ::google::protobuf::RepeatedPtrField< ::eap::Action >&
 Result::actions() const {
-  // @@protoc_insertion_point(field_list:Result.actions)
+  // @@protoc_insertion_point(field_list:eap.Result.actions)
   return actions_;
 }
 
@@ -483,14 +486,15 @@ Result::actions() const {
 
 // @@protoc_insertion_point(namespace_scope)
 
+}  // namespace eap
 
 namespace google {
 namespace protobuf {
 
-template <> struct is_proto_enum< ::Action_Type> : ::std::true_type {};
+template <> struct is_proto_enum< ::eap::Action_Type> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::Action_Type>() {
-  return ::Action_Type_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::eap::Action_Type>() {
+  return ::eap::Action_Type_descriptor();
 }
 
 }  // namespace protobuf

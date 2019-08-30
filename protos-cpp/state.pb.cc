@@ -21,6 +21,7 @@ extern PROTOBUF_INTERNAL_EXPORT_state_2eproto ::google::protobuf::internal::SCCI
 extern PROTOBUF_INTERNAL_EXPORT_state_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Tile_state_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_state_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Unit_state_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_state_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_Map_state_2eproto;
+namespace eap {
 class UnitDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Unit> _instance;
@@ -41,15 +42,16 @@ class StateDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<State> _instance;
 } _State_default_instance_;
+}  // namespace eap
 static void InitDefaultsUnit_state_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::_Unit_default_instance_;
-    new (ptr) ::Unit();
+    void* ptr = &::eap::_Unit_default_instance_;
+    new (ptr) ::eap::Unit();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::Unit::InitAsDefaultInstance();
+  ::eap::Unit::InitAsDefaultInstance();
 }
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_Unit_state_2eproto =
@@ -60,11 +62,11 @@ static void InitDefaultsTile_state_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::_Tile_default_instance_;
-    new (ptr) ::Tile();
+    void* ptr = &::eap::_Tile_default_instance_;
+    new (ptr) ::eap::Tile();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::Tile::InitAsDefaultInstance();
+  ::eap::Tile::InitAsDefaultInstance();
 }
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_Tile_state_2eproto =
@@ -75,11 +77,11 @@ static void InitDefaultsProjectile_state_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::_Projectile_default_instance_;
-    new (ptr) ::Projectile();
+    void* ptr = &::eap::_Projectile_default_instance_;
+    new (ptr) ::eap::Projectile();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::Projectile::InitAsDefaultInstance();
+  ::eap::Projectile::InitAsDefaultInstance();
 }
 
 ::google::protobuf::internal::SCCInfo<0> scc_info_Projectile_state_2eproto =
@@ -89,11 +91,11 @@ static void InitDefaultsMap_state_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::_Map_default_instance_;
-    new (ptr) ::Map();
+    void* ptr = &::eap::_Map_default_instance_;
+    new (ptr) ::eap::Map();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::Map::InitAsDefaultInstance();
+  ::eap::Map::InitAsDefaultInstance();
 }
 
 ::google::protobuf::internal::SCCInfo<3> scc_info_Map_state_2eproto =
@@ -106,11 +108,11 @@ static void InitDefaultsState_state_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::_State_default_instance_;
-    new (ptr) ::State();
+    void* ptr = &::eap::_State_default_instance_;
+    new (ptr) ::eap::State();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::State::InitAsDefaultInstance();
+  ::eap::State::InitAsDefaultInstance();
 }
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_State_state_2eproto =
@@ -131,58 +133,58 @@ constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descr
 
 const ::google::protobuf::uint32 TableStruct_state_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Unit, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::eap::Unit, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::Unit, id_),
-  PROTOBUF_FIELD_OFFSET(::Unit, position_),
-  PROTOBUF_FIELD_OFFSET(::Unit, class__),
-  PROTOBUF_FIELD_OFFSET(::Unit, health_),
+  PROTOBUF_FIELD_OFFSET(::eap::Unit, id_),
+  PROTOBUF_FIELD_OFFSET(::eap::Unit, position_),
+  PROTOBUF_FIELD_OFFSET(::eap::Unit, class__),
+  PROTOBUF_FIELD_OFFSET(::eap::Unit, health_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Tile, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::eap::Tile, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::Tile, type_),
-  PROTOBUF_FIELD_OFFSET(::Tile, position_),
+  PROTOBUF_FIELD_OFFSET(::eap::Tile, type_),
+  PROTOBUF_FIELD_OFFSET(::eap::Tile, position_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Projectile, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::eap::Projectile, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::Projectile, thrown_by_unit_id_),
-  PROTOBUF_FIELD_OFFSET(::Projectile, type_),
+  PROTOBUF_FIELD_OFFSET(::eap::Projectile, thrown_by_unit_id_),
+  PROTOBUF_FIELD_OFFSET(::eap::Projectile, type_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Map, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::eap::Map, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::Map, tiles_),
-  PROTOBUF_FIELD_OFFSET(::Map, ally_units_),
-  PROTOBUF_FIELD_OFFSET(::Map, enemy_units_),
-  PROTOBUF_FIELD_OFFSET(::Map, projectiles_),
+  PROTOBUF_FIELD_OFFSET(::eap::Map, tiles_),
+  PROTOBUF_FIELD_OFFSET(::eap::Map, ally_units_),
+  PROTOBUF_FIELD_OFFSET(::eap::Map, enemy_units_),
+  PROTOBUF_FIELD_OFFSET(::eap::Map, projectiles_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::State, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::eap::State, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::State, map_),
+  PROTOBUF_FIELD_OFFSET(::eap::State, map_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::Unit)},
-  { 9, -1, sizeof(::Tile)},
-  { 16, -1, sizeof(::Projectile)},
-  { 23, -1, sizeof(::Map)},
-  { 32, -1, sizeof(::State)},
+  { 0, -1, sizeof(::eap::Unit)},
+  { 9, -1, sizeof(::eap::Tile)},
+  { 16, -1, sizeof(::eap::Projectile)},
+  { 23, -1, sizeof(::eap::Map)},
+  { 32, -1, sizeof(::eap::State)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::_Unit_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::_Tile_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::_Projectile_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::_Map_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::_State_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::eap::_Unit_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::eap::_Tile_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::eap::_Projectile_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::eap::_Map_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::eap::_State_default_instance_),
 };
 
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_state_2eproto = {
@@ -192,24 +194,25 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 };
 
 const char descriptor_table_protodef_state_2eproto[] =
-  "\n\013state.proto\032\014common.proto\"V\n\004Unit\022\n\n\002i"
-  "d\030\001 \001(\005\022\033\n\010position\030\002 \001(\0132\t.Position\022\025\n\005"
-  "class\030\003 \001(\0162\006.Class\022\016\n\006health\030\004 \001(\005\"e\n\004T"
-  "ile\022\030\n\004type\030\001 \001(\0162\n.Tile.Type\022\033\n\010positio"
-  "n\030\002 \001(\0132\t.Position\"&\n\004Type\022\t\n\005FLOOR\020\000\022\t\n"
-  "\005WATER\020\001\022\010\n\004WALL\020\002\"Y\n\nProjectile\022\031\n\021thro"
-  "wn_by_unit_id\030\001 \001(\005\022\036\n\004type\030\002 \001(\0162\020.Proj"
-  "ectile.Type\"\020\n\004Type\022\010\n\004BOMB\020\000\"t\n\003Map\022\024\n\005"
-  "tiles\030\001 \003(\0132\005.Tile\022\031\n\nally_units\030\002 \003(\0132\005"
-  ".Unit\022\032\n\013enemy_units\030\003 \003(\0132\005.Unit\022 \n\013pro"
-  "jectiles\030\004 \003(\0132\013.Projectile\"\032\n\005State\022\021\n\003"
-  "map\030\001 \001(\0132\004.Map*.\n\005Class\022\n\n\006KNIGHT\020\000\022\n\n\006"
-  "ARCHER\020\001\022\r\n\tBOMBERMAN\020\002b\006proto3"
+  "\n\013state.proto\022\003eap\032\014common.proto\"^\n\004Unit"
+  "\022\n\n\002id\030\001 \001(\005\022\037\n\010position\030\002 \001(\0132\r.eap.Pos"
+  "ition\022\031\n\005class\030\003 \001(\0162\n.eap.Class\022\016\n\006heal"
+  "th\030\004 \001(\005\"m\n\004Tile\022\034\n\004type\030\001 \001(\0162\016.eap.Til"
+  "e.Type\022\037\n\010position\030\002 \001(\0132\r.eap.Position\""
+  "&\n\004Type\022\t\n\005FLOOR\020\000\022\t\n\005WATER\020\001\022\010\n\004WALL\020\002\""
+  "]\n\nProjectile\022\031\n\021thrown_by_unit_id\030\001 \001(\005"
+  "\022\"\n\004type\030\002 \001(\0162\024.eap.Projectile.Type\"\020\n\004"
+  "Type\022\010\n\004BOMB\020\000\"\204\001\n\003Map\022\030\n\005tiles\030\001 \003(\0132\t."
+  "eap.Tile\022\035\n\nally_units\030\002 \003(\0132\t.eap.Unit\022"
+  "\036\n\013enemy_units\030\003 \003(\0132\t.eap.Unit\022$\n\013proje"
+  "ctiles\030\004 \003(\0132\017.eap.Projectile\"\036\n\005State\022\025"
+  "\n\003map\030\001 \001(\0132\010.eap.Map*.\n\005Class\022\n\n\006KNIGHT"
+  "\020\000\022\n\n\006ARCHER\020\001\022\r\n\tBOMBERMAN\020\002b\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_state_2eproto = {
   false, InitDefaults_state_2eproto, 
   descriptor_table_protodef_state_2eproto,
-  "state.proto", &assign_descriptors_table_state_2eproto, 511,
+  "state.proto", &assign_descriptors_table_state_2eproto, 557,
 };
 
 void AddDescriptors_state_2eproto() {
@@ -222,6 +225,7 @@ void AddDescriptors_state_2eproto() {
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_state_2eproto = []() { AddDescriptors_state_2eproto(); return true; }();
+namespace eap {
 const ::google::protobuf::EnumDescriptor* Tile_Type_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_state_2eproto);
   return file_level_enum_descriptors_state_2eproto[0];
@@ -283,15 +287,15 @@ bool Class_IsValid(int value) {
 // ===================================================================
 
 void Unit::InitAsDefaultInstance() {
-  ::_Unit_default_instance_._instance.get_mutable()->position_ = const_cast< ::Position*>(
-      ::Position::internal_default_instance());
+  ::eap::_Unit_default_instance_._instance.get_mutable()->position_ = const_cast< ::eap::Position*>(
+      ::eap::Position::internal_default_instance());
 }
 class Unit::HasBitSetters {
  public:
-  static const ::Position& position(const Unit* msg);
+  static const ::eap::Position& position(const Unit* msg);
 };
 
-const ::Position&
+const ::eap::Position&
 Unit::HasBitSetters::position(const Unit* msg) {
   return *msg->position_;
 }
@@ -311,21 +315,21 @@ const int Unit::kHealthFieldNumber;
 Unit::Unit()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:Unit)
+  // @@protoc_insertion_point(constructor:eap.Unit)
 }
 Unit::Unit(const Unit& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from.has_position()) {
-    position_ = new ::Position(*from.position_);
+    position_ = new ::eap::Position(*from.position_);
   } else {
     position_ = nullptr;
   }
   ::memcpy(&id_, &from.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&health_) -
     reinterpret_cast<char*>(&id_)) + sizeof(health_));
-  // @@protoc_insertion_point(copy_constructor:Unit)
+  // @@protoc_insertion_point(copy_constructor:eap.Unit)
 }
 
 void Unit::SharedCtor() {
@@ -337,7 +341,7 @@ void Unit::SharedCtor() {
 }
 
 Unit::~Unit() {
-  // @@protoc_insertion_point(destructor:Unit)
+  // @@protoc_insertion_point(destructor:eap.Unit)
   SharedDtor();
 }
 
@@ -355,7 +359,7 @@ const Unit& Unit::default_instance() {
 
 
 void Unit::Clear() {
-// @@protoc_insertion_point(message_clear_start:Unit)
+// @@protoc_insertion_point(message_clear_start:eap.Unit)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -390,12 +394,12 @@ const char* Unit::_InternalParse(const char* begin, const char* end, void* objec
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // .Position position = 2;
+      // .eap.Position position = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::Position::_InternalParse;
+        parser_till_end = ::eap::Position::_InternalParse;
         object = msg->mutable_position();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
@@ -403,11 +407,11 @@ const char* Unit::_InternalParse(const char* begin, const char* end, void* objec
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .Class class = 3;
+      // .eap.Class class = 3;
       case 3: {
         if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
         ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_class_(static_cast<::Class>(val));
+        msg->set_class_(static_cast<::eap::Class>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -442,7 +446,7 @@ bool Unit::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Unit)
+  // @@protoc_insertion_point(parse_start:eap.Unit)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -461,7 +465,7 @@ bool Unit::MergePartialFromCodedStream(
         break;
       }
 
-      // .Position position = 2;
+      // .eap.Position position = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -472,14 +476,14 @@ bool Unit::MergePartialFromCodedStream(
         break;
       }
 
-      // .Class class = 3;
+      // .eap.Class class = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
           int value = 0;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          set_class_(static_cast< ::Class >(value));
+          set_class_(static_cast< ::eap::Class >(value));
         } else {
           goto handle_unusual;
         }
@@ -511,10 +515,10 @@ bool Unit::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:Unit)
+  // @@protoc_insertion_point(parse_success:eap.Unit)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:Unit)
+  // @@protoc_insertion_point(parse_failure:eap.Unit)
   return false;
 #undef DO_
 }
@@ -522,7 +526,7 @@ failure:
 
 void Unit::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Unit)
+  // @@protoc_insertion_point(serialize_start:eap.Unit)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -531,13 +535,13 @@ void Unit::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->id(), output);
   }
 
-  // .Position position = 2;
+  // .eap.Position position = 2;
   if (this->has_position()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, HasBitSetters::position(this), output);
   }
 
-  // .Class class = 3;
+  // .eap.Class class = 3;
   if (this->class_() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       3, this->class_(), output);
@@ -552,12 +556,12 @@ void Unit::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:Unit)
+  // @@protoc_insertion_point(serialize_end:eap.Unit)
 }
 
 ::google::protobuf::uint8* Unit::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Unit)
+  // @@protoc_insertion_point(serialize_to_array_start:eap.Unit)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -566,14 +570,14 @@ void Unit::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->id(), target);
   }
 
-  // .Position position = 2;
+  // .eap.Position position = 2;
   if (this->has_position()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         2, HasBitSetters::position(this), target);
   }
 
-  // .Class class = 3;
+  // .eap.Class class = 3;
   if (this->class_() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       3, this->class_(), target);
@@ -588,12 +592,12 @@ void Unit::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Unit)
+  // @@protoc_insertion_point(serialize_to_array_end:eap.Unit)
   return target;
 }
 
 size_t Unit::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Unit)
+// @@protoc_insertion_point(message_byte_size_start:eap.Unit)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -605,7 +609,7 @@ size_t Unit::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .Position position = 2;
+  // .eap.Position position = 2;
   if (this->has_position()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
@@ -619,7 +623,7 @@ size_t Unit::ByteSizeLong() const {
         this->id());
   }
 
-  // .Class class = 3;
+  // .eap.Class class = 3;
   if (this->class_() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->class_());
@@ -638,29 +642,29 @@ size_t Unit::ByteSizeLong() const {
 }
 
 void Unit::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:Unit)
+// @@protoc_insertion_point(generalized_merge_from_start:eap.Unit)
   GOOGLE_DCHECK_NE(&from, this);
   const Unit* source =
       ::google::protobuf::DynamicCastToGenerated<Unit>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Unit)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:eap.Unit)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:Unit)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:eap.Unit)
     MergeFrom(*source);
   }
 }
 
 void Unit::MergeFrom(const Unit& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:Unit)
+// @@protoc_insertion_point(class_specific_merge_from_start:eap.Unit)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.has_position()) {
-    mutable_position()->::Position::MergeFrom(from.position());
+    mutable_position()->::eap::Position::MergeFrom(from.position());
   }
   if (from.id() != 0) {
     set_id(from.id());
@@ -674,14 +678,14 @@ void Unit::MergeFrom(const Unit& from) {
 }
 
 void Unit::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:Unit)
+// @@protoc_insertion_point(generalized_copy_from_start:eap.Unit)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Unit::CopyFrom(const Unit& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Unit)
+// @@protoc_insertion_point(class_specific_copy_from_start:eap.Unit)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -713,15 +717,15 @@ void Unit::InternalSwap(Unit* other) {
 // ===================================================================
 
 void Tile::InitAsDefaultInstance() {
-  ::_Tile_default_instance_._instance.get_mutable()->position_ = const_cast< ::Position*>(
-      ::Position::internal_default_instance());
+  ::eap::_Tile_default_instance_._instance.get_mutable()->position_ = const_cast< ::eap::Position*>(
+      ::eap::Position::internal_default_instance());
 }
 class Tile::HasBitSetters {
  public:
-  static const ::Position& position(const Tile* msg);
+  static const ::eap::Position& position(const Tile* msg);
 };
 
-const ::Position&
+const ::eap::Position&
 Tile::HasBitSetters::position(const Tile* msg) {
   return *msg->position_;
 }
@@ -739,19 +743,19 @@ const int Tile::kPositionFieldNumber;
 Tile::Tile()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:Tile)
+  // @@protoc_insertion_point(constructor:eap.Tile)
 }
 Tile::Tile(const Tile& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from.has_position()) {
-    position_ = new ::Position(*from.position_);
+    position_ = new ::eap::Position(*from.position_);
   } else {
     position_ = nullptr;
   }
   type_ = from.type_;
-  // @@protoc_insertion_point(copy_constructor:Tile)
+  // @@protoc_insertion_point(copy_constructor:eap.Tile)
 }
 
 void Tile::SharedCtor() {
@@ -763,7 +767,7 @@ void Tile::SharedCtor() {
 }
 
 Tile::~Tile() {
-  // @@protoc_insertion_point(destructor:Tile)
+  // @@protoc_insertion_point(destructor:eap.Tile)
   SharedDtor();
 }
 
@@ -781,7 +785,7 @@ const Tile& Tile::default_instance() {
 
 
 void Tile::Clear() {
-// @@protoc_insertion_point(message_clear_start:Tile)
+// @@protoc_insertion_point(message_clear_start:eap.Tile)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -807,20 +811,20 @@ const char* Tile::_InternalParse(const char* begin, const char* end, void* objec
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .Tile.Type type = 1;
+      // .eap.Tile.Type type = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
         ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_type(static_cast<::Tile_Type>(val));
+        msg->set_type(static_cast<::eap::Tile_Type>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // .Position position = 2;
+      // .eap.Position position = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::Position::_InternalParse;
+        parser_till_end = ::eap::Position::_InternalParse;
         object = msg->mutable_position();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
@@ -852,27 +856,27 @@ bool Tile::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Tile)
+  // @@protoc_insertion_point(parse_start:eap.Tile)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .Tile.Type type = 1;
+      // .eap.Tile.Type type = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
           int value = 0;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          set_type(static_cast< ::Tile_Type >(value));
+          set_type(static_cast< ::eap::Tile_Type >(value));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // .Position position = 2;
+      // .eap.Position position = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -895,10 +899,10 @@ bool Tile::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:Tile)
+  // @@protoc_insertion_point(parse_success:eap.Tile)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:Tile)
+  // @@protoc_insertion_point(parse_failure:eap.Tile)
   return false;
 #undef DO_
 }
@@ -906,17 +910,17 @@ failure:
 
 void Tile::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Tile)
+  // @@protoc_insertion_point(serialize_start:eap.Tile)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .Tile.Type type = 1;
+  // .eap.Tile.Type type = 1;
   if (this->type() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       1, this->type(), output);
   }
 
-  // .Position position = 2;
+  // .eap.Position position = 2;
   if (this->has_position()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, HasBitSetters::position(this), output);
@@ -926,22 +930,22 @@ void Tile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:Tile)
+  // @@protoc_insertion_point(serialize_end:eap.Tile)
 }
 
 ::google::protobuf::uint8* Tile::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Tile)
+  // @@protoc_insertion_point(serialize_to_array_start:eap.Tile)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .Tile.Type type = 1;
+  // .eap.Tile.Type type = 1;
   if (this->type() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       1, this->type(), target);
   }
 
-  // .Position position = 2;
+  // .eap.Position position = 2;
   if (this->has_position()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
@@ -952,12 +956,12 @@ void Tile::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Tile)
+  // @@protoc_insertion_point(serialize_to_array_end:eap.Tile)
   return target;
 }
 
 size_t Tile::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Tile)
+// @@protoc_insertion_point(message_byte_size_start:eap.Tile)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -969,14 +973,14 @@ size_t Tile::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .Position position = 2;
+  // .eap.Position position = 2;
   if (this->has_position()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *position_);
   }
 
-  // .Tile.Type type = 1;
+  // .eap.Tile.Type type = 1;
   if (this->type() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
@@ -988,29 +992,29 @@ size_t Tile::ByteSizeLong() const {
 }
 
 void Tile::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:Tile)
+// @@protoc_insertion_point(generalized_merge_from_start:eap.Tile)
   GOOGLE_DCHECK_NE(&from, this);
   const Tile* source =
       ::google::protobuf::DynamicCastToGenerated<Tile>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Tile)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:eap.Tile)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:Tile)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:eap.Tile)
     MergeFrom(*source);
   }
 }
 
 void Tile::MergeFrom(const Tile& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:Tile)
+// @@protoc_insertion_point(class_specific_merge_from_start:eap.Tile)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.has_position()) {
-    mutable_position()->::Position::MergeFrom(from.position());
+    mutable_position()->::eap::Position::MergeFrom(from.position());
   }
   if (from.type() != 0) {
     set_type(from.type());
@@ -1018,14 +1022,14 @@ void Tile::MergeFrom(const Tile& from) {
 }
 
 void Tile::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:Tile)
+// @@protoc_insertion_point(generalized_copy_from_start:eap.Tile)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Tile::CopyFrom(const Tile& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Tile)
+// @@protoc_insertion_point(class_specific_copy_from_start:eap.Tile)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1068,7 +1072,7 @@ const int Projectile::kTypeFieldNumber;
 Projectile::Projectile()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:Projectile)
+  // @@protoc_insertion_point(constructor:eap.Projectile)
 }
 Projectile::Projectile(const Projectile& from)
   : ::google::protobuf::Message(),
@@ -1077,7 +1081,7 @@ Projectile::Projectile(const Projectile& from)
   ::memcpy(&thrown_by_unit_id_, &from.thrown_by_unit_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&type_) -
     reinterpret_cast<char*>(&thrown_by_unit_id_)) + sizeof(type_));
-  // @@protoc_insertion_point(copy_constructor:Projectile)
+  // @@protoc_insertion_point(copy_constructor:eap.Projectile)
 }
 
 void Projectile::SharedCtor() {
@@ -1087,7 +1091,7 @@ void Projectile::SharedCtor() {
 }
 
 Projectile::~Projectile() {
-  // @@protoc_insertion_point(destructor:Projectile)
+  // @@protoc_insertion_point(destructor:eap.Projectile)
   SharedDtor();
 }
 
@@ -1104,7 +1108,7 @@ const Projectile& Projectile::default_instance() {
 
 
 void Projectile::Clear() {
-// @@protoc_insertion_point(message_clear_start:Projectile)
+// @@protoc_insertion_point(message_clear_start:eap.Projectile)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1135,11 +1139,11 @@ const char* Projectile::_InternalParse(const char* begin, const char* end, void*
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // .Projectile.Type type = 2;
+      // .eap.Projectile.Type type = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
         ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_type(static_cast<::Projectile_Type>(val));
+        msg->set_type(static_cast<::eap::Projectile_Type>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -1164,7 +1168,7 @@ bool Projectile::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Projectile)
+  // @@protoc_insertion_point(parse_start:eap.Projectile)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -1183,14 +1187,14 @@ bool Projectile::MergePartialFromCodedStream(
         break;
       }
 
-      // .Projectile.Type type = 2;
+      // .eap.Projectile.Type type = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
           int value = 0;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          set_type(static_cast< ::Projectile_Type >(value));
+          set_type(static_cast< ::eap::Projectile_Type >(value));
         } else {
           goto handle_unusual;
         }
@@ -1209,10 +1213,10 @@ bool Projectile::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:Projectile)
+  // @@protoc_insertion_point(parse_success:eap.Projectile)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:Projectile)
+  // @@protoc_insertion_point(parse_failure:eap.Projectile)
   return false;
 #undef DO_
 }
@@ -1220,7 +1224,7 @@ failure:
 
 void Projectile::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Projectile)
+  // @@protoc_insertion_point(serialize_start:eap.Projectile)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1229,7 +1233,7 @@ void Projectile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->thrown_by_unit_id(), output);
   }
 
-  // .Projectile.Type type = 2;
+  // .eap.Projectile.Type type = 2;
   if (this->type() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       2, this->type(), output);
@@ -1239,12 +1243,12 @@ void Projectile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:Projectile)
+  // @@protoc_insertion_point(serialize_end:eap.Projectile)
 }
 
 ::google::protobuf::uint8* Projectile::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Projectile)
+  // @@protoc_insertion_point(serialize_to_array_start:eap.Projectile)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1253,7 +1257,7 @@ void Projectile::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->thrown_by_unit_id(), target);
   }
 
-  // .Projectile.Type type = 2;
+  // .eap.Projectile.Type type = 2;
   if (this->type() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       2, this->type(), target);
@@ -1263,12 +1267,12 @@ void Projectile::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Projectile)
+  // @@protoc_insertion_point(serialize_to_array_end:eap.Projectile)
   return target;
 }
 
 size_t Projectile::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Projectile)
+// @@protoc_insertion_point(message_byte_size_start:eap.Projectile)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1287,7 +1291,7 @@ size_t Projectile::ByteSizeLong() const {
         this->thrown_by_unit_id());
   }
 
-  // .Projectile.Type type = 2;
+  // .eap.Projectile.Type type = 2;
   if (this->type() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
@@ -1299,22 +1303,22 @@ size_t Projectile::ByteSizeLong() const {
 }
 
 void Projectile::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:Projectile)
+// @@protoc_insertion_point(generalized_merge_from_start:eap.Projectile)
   GOOGLE_DCHECK_NE(&from, this);
   const Projectile* source =
       ::google::protobuf::DynamicCastToGenerated<Projectile>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Projectile)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:eap.Projectile)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:Projectile)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:eap.Projectile)
     MergeFrom(*source);
   }
 }
 
 void Projectile::MergeFrom(const Projectile& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:Projectile)
+// @@protoc_insertion_point(class_specific_merge_from_start:eap.Projectile)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -1329,14 +1333,14 @@ void Projectile::MergeFrom(const Projectile& from) {
 }
 
 void Projectile::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:Projectile)
+// @@protoc_insertion_point(generalized_copy_from_start:eap.Projectile)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Projectile::CopyFrom(const Projectile& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Projectile)
+// @@protoc_insertion_point(class_specific_copy_from_start:eap.Projectile)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1381,7 +1385,7 @@ const int Map::kProjectilesFieldNumber;
 Map::Map()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:Map)
+  // @@protoc_insertion_point(constructor:eap.Map)
 }
 Map::Map(const Map& from)
   : ::google::protobuf::Message(),
@@ -1391,7 +1395,7 @@ Map::Map(const Map& from)
       enemy_units_(from.enemy_units_),
       projectiles_(from.projectiles_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:Map)
+  // @@protoc_insertion_point(copy_constructor:eap.Map)
 }
 
 void Map::SharedCtor() {
@@ -1400,7 +1404,7 @@ void Map::SharedCtor() {
 }
 
 Map::~Map() {
-  // @@protoc_insertion_point(destructor:Map)
+  // @@protoc_insertion_point(destructor:eap.Map)
   SharedDtor();
 }
 
@@ -1417,7 +1421,7 @@ const Map& Map::default_instance() {
 
 
 void Map::Clear() {
-// @@protoc_insertion_point(message_clear_start:Map)
+// @@protoc_insertion_point(message_clear_start:eap.Map)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1442,13 +1446,13 @@ const char* Map::_InternalParse(const char* begin, const char* end, void* object
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // repeated .Tile tiles = 1;
+      // repeated .eap.Tile tiles = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::Tile::_InternalParse;
+          parser_till_end = ::eap::Tile::_InternalParse;
           object = msg->add_tiles();
           if (size > end - ptr) goto len_delim_till_end;
           ptr += size;
@@ -1458,13 +1462,13 @@ const char* Map::_InternalParse(const char* begin, const char* end, void* object
         } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 10 && (ptr += 1));
         break;
       }
-      // repeated .Unit ally_units = 2;
+      // repeated .eap.Unit ally_units = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::Unit::_InternalParse;
+          parser_till_end = ::eap::Unit::_InternalParse;
           object = msg->add_ally_units();
           if (size > end - ptr) goto len_delim_till_end;
           ptr += size;
@@ -1474,13 +1478,13 @@ const char* Map::_InternalParse(const char* begin, const char* end, void* object
         } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 18 && (ptr += 1));
         break;
       }
-      // repeated .Unit enemy_units = 3;
+      // repeated .eap.Unit enemy_units = 3;
       case 3: {
         if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::Unit::_InternalParse;
+          parser_till_end = ::eap::Unit::_InternalParse;
           object = msg->add_enemy_units();
           if (size > end - ptr) goto len_delim_till_end;
           ptr += size;
@@ -1490,13 +1494,13 @@ const char* Map::_InternalParse(const char* begin, const char* end, void* object
         } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 26 && (ptr += 1));
         break;
       }
-      // repeated .Projectile projectiles = 4;
+      // repeated .eap.Projectile projectiles = 4;
       case 4: {
         if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::Projectile::_InternalParse;
+          parser_till_end = ::eap::Projectile::_InternalParse;
           object = msg->add_projectiles();
           if (size > end - ptr) goto len_delim_till_end;
           ptr += size;
@@ -1530,13 +1534,13 @@ bool Map::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Map)
+  // @@protoc_insertion_point(parse_start:eap.Map)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .Tile tiles = 1;
+      // repeated .eap.Tile tiles = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -1547,7 +1551,7 @@ bool Map::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .Unit ally_units = 2;
+      // repeated .eap.Unit ally_units = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -1558,7 +1562,7 @@ bool Map::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .Unit enemy_units = 3;
+      // repeated .eap.Unit enemy_units = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -1569,7 +1573,7 @@ bool Map::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .Projectile projectiles = 4;
+      // repeated .eap.Projectile projectiles = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -1592,10 +1596,10 @@ bool Map::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:Map)
+  // @@protoc_insertion_point(parse_success:eap.Map)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:Map)
+  // @@protoc_insertion_point(parse_failure:eap.Map)
   return false;
 #undef DO_
 }
@@ -1603,11 +1607,11 @@ failure:
 
 void Map::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Map)
+  // @@protoc_insertion_point(serialize_start:eap.Map)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .Tile tiles = 1;
+  // repeated .eap.Tile tiles = 1;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->tiles_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -1616,7 +1620,7 @@ void Map::SerializeWithCachedSizes(
       output);
   }
 
-  // repeated .Unit ally_units = 2;
+  // repeated .eap.Unit ally_units = 2;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->ally_units_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -1625,7 +1629,7 @@ void Map::SerializeWithCachedSizes(
       output);
   }
 
-  // repeated .Unit enemy_units = 3;
+  // repeated .eap.Unit enemy_units = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->enemy_units_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -1634,7 +1638,7 @@ void Map::SerializeWithCachedSizes(
       output);
   }
 
-  // repeated .Projectile projectiles = 4;
+  // repeated .eap.Projectile projectiles = 4;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->projectiles_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -1647,16 +1651,16 @@ void Map::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:Map)
+  // @@protoc_insertion_point(serialize_end:eap.Map)
 }
 
 ::google::protobuf::uint8* Map::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Map)
+  // @@protoc_insertion_point(serialize_to_array_start:eap.Map)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .Tile tiles = 1;
+  // repeated .eap.Tile tiles = 1;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->tiles_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -1664,7 +1668,7 @@ void Map::SerializeWithCachedSizes(
         1, this->tiles(static_cast<int>(i)), target);
   }
 
-  // repeated .Unit ally_units = 2;
+  // repeated .eap.Unit ally_units = 2;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->ally_units_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -1672,7 +1676,7 @@ void Map::SerializeWithCachedSizes(
         2, this->ally_units(static_cast<int>(i)), target);
   }
 
-  // repeated .Unit enemy_units = 3;
+  // repeated .eap.Unit enemy_units = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->enemy_units_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -1680,7 +1684,7 @@ void Map::SerializeWithCachedSizes(
         3, this->enemy_units(static_cast<int>(i)), target);
   }
 
-  // repeated .Projectile projectiles = 4;
+  // repeated .eap.Projectile projectiles = 4;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->projectiles_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -1692,12 +1696,12 @@ void Map::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Map)
+  // @@protoc_insertion_point(serialize_to_array_end:eap.Map)
   return target;
 }
 
 size_t Map::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Map)
+// @@protoc_insertion_point(message_byte_size_start:eap.Map)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1709,7 +1713,7 @@ size_t Map::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .Tile tiles = 1;
+  // repeated .eap.Tile tiles = 1;
   {
     unsigned int count = static_cast<unsigned int>(this->tiles_size());
     total_size += 1UL * count;
@@ -1720,7 +1724,7 @@ size_t Map::ByteSizeLong() const {
     }
   }
 
-  // repeated .Unit ally_units = 2;
+  // repeated .eap.Unit ally_units = 2;
   {
     unsigned int count = static_cast<unsigned int>(this->ally_units_size());
     total_size += 1UL * count;
@@ -1731,7 +1735,7 @@ size_t Map::ByteSizeLong() const {
     }
   }
 
-  // repeated .Unit enemy_units = 3;
+  // repeated .eap.Unit enemy_units = 3;
   {
     unsigned int count = static_cast<unsigned int>(this->enemy_units_size());
     total_size += 1UL * count;
@@ -1742,7 +1746,7 @@ size_t Map::ByteSizeLong() const {
     }
   }
 
-  // repeated .Projectile projectiles = 4;
+  // repeated .eap.Projectile projectiles = 4;
   {
     unsigned int count = static_cast<unsigned int>(this->projectiles_size());
     total_size += 1UL * count;
@@ -1759,22 +1763,22 @@ size_t Map::ByteSizeLong() const {
 }
 
 void Map::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:Map)
+// @@protoc_insertion_point(generalized_merge_from_start:eap.Map)
   GOOGLE_DCHECK_NE(&from, this);
   const Map* source =
       ::google::protobuf::DynamicCastToGenerated<Map>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Map)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:eap.Map)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:Map)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:eap.Map)
     MergeFrom(*source);
   }
 }
 
 void Map::MergeFrom(const Map& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:Map)
+// @@protoc_insertion_point(class_specific_merge_from_start:eap.Map)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -1787,14 +1791,14 @@ void Map::MergeFrom(const Map& from) {
 }
 
 void Map::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:Map)
+// @@protoc_insertion_point(generalized_copy_from_start:eap.Map)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Map::CopyFrom(const Map& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Map)
+// @@protoc_insertion_point(class_specific_copy_from_start:eap.Map)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1826,15 +1830,15 @@ void Map::InternalSwap(Map* other) {
 // ===================================================================
 
 void State::InitAsDefaultInstance() {
-  ::_State_default_instance_._instance.get_mutable()->map_ = const_cast< ::Map*>(
-      ::Map::internal_default_instance());
+  ::eap::_State_default_instance_._instance.get_mutable()->map_ = const_cast< ::eap::Map*>(
+      ::eap::Map::internal_default_instance());
 }
 class State::HasBitSetters {
  public:
-  static const ::Map& map(const State* msg);
+  static const ::eap::Map& map(const State* msg);
 };
 
-const ::Map&
+const ::eap::Map&
 State::HasBitSetters::map(const State* msg) {
   return *msg->map_;
 }
@@ -1845,18 +1849,18 @@ const int State::kMapFieldNumber;
 State::State()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:State)
+  // @@protoc_insertion_point(constructor:eap.State)
 }
 State::State(const State& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from.has_map()) {
-    map_ = new ::Map(*from.map_);
+    map_ = new ::eap::Map(*from.map_);
   } else {
     map_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:State)
+  // @@protoc_insertion_point(copy_constructor:eap.State)
 }
 
 void State::SharedCtor() {
@@ -1866,7 +1870,7 @@ void State::SharedCtor() {
 }
 
 State::~State() {
-  // @@protoc_insertion_point(destructor:State)
+  // @@protoc_insertion_point(destructor:eap.State)
   SharedDtor();
 }
 
@@ -1884,7 +1888,7 @@ const State& State::default_instance() {
 
 
 void State::Clear() {
-// @@protoc_insertion_point(message_clear_start:State)
+// @@protoc_insertion_point(message_clear_start:eap.State)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1909,12 +1913,12 @@ const char* State::_InternalParse(const char* begin, const char* end, void* obje
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .Map map = 1;
+      // .eap.Map map = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::Map::_InternalParse;
+        parser_till_end = ::eap::Map::_InternalParse;
         object = msg->mutable_map();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
@@ -1946,13 +1950,13 @@ bool State::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:State)
+  // @@protoc_insertion_point(parse_start:eap.State)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .Map map = 1;
+      // .eap.Map map = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -1975,10 +1979,10 @@ bool State::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:State)
+  // @@protoc_insertion_point(parse_success:eap.State)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:State)
+  // @@protoc_insertion_point(parse_failure:eap.State)
   return false;
 #undef DO_
 }
@@ -1986,11 +1990,11 @@ failure:
 
 void State::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:State)
+  // @@protoc_insertion_point(serialize_start:eap.State)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .Map map = 1;
+  // .eap.Map map = 1;
   if (this->has_map()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, HasBitSetters::map(this), output);
@@ -2000,16 +2004,16 @@ void State::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:State)
+  // @@protoc_insertion_point(serialize_end:eap.State)
 }
 
 ::google::protobuf::uint8* State::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:State)
+  // @@protoc_insertion_point(serialize_to_array_start:eap.State)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .Map map = 1;
+  // .eap.Map map = 1;
   if (this->has_map()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
@@ -2020,12 +2024,12 @@ void State::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:State)
+  // @@protoc_insertion_point(serialize_to_array_end:eap.State)
   return target;
 }
 
 size_t State::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:State)
+// @@protoc_insertion_point(message_byte_size_start:eap.State)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2037,7 +2041,7 @@ size_t State::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .Map map = 1;
+  // .eap.Map map = 1;
   if (this->has_map()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
@@ -2050,41 +2054,41 @@ size_t State::ByteSizeLong() const {
 }
 
 void State::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:State)
+// @@protoc_insertion_point(generalized_merge_from_start:eap.State)
   GOOGLE_DCHECK_NE(&from, this);
   const State* source =
       ::google::protobuf::DynamicCastToGenerated<State>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:State)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:eap.State)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:State)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:eap.State)
     MergeFrom(*source);
   }
 }
 
 void State::MergeFrom(const State& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:State)
+// @@protoc_insertion_point(class_specific_merge_from_start:eap.State)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.has_map()) {
-    mutable_map()->::Map::MergeFrom(from.map());
+    mutable_map()->::eap::Map::MergeFrom(from.map());
   }
 }
 
 void State::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:State)
+// @@protoc_insertion_point(generalized_copy_from_start:eap.State)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void State::CopyFrom(const State& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:State)
+// @@protoc_insertion_point(class_specific_copy_from_start:eap.State)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2111,22 +2115,23 @@ void State::InternalSwap(State* other) {
 
 
 // @@protoc_insertion_point(namespace_scope)
+}  // namespace eap
 namespace google {
 namespace protobuf {
-template<> PROTOBUF_NOINLINE ::Unit* Arena::CreateMaybeMessage< ::Unit >(Arena* arena) {
-  return Arena::CreateInternal< ::Unit >(arena);
+template<> PROTOBUF_NOINLINE ::eap::Unit* Arena::CreateMaybeMessage< ::eap::Unit >(Arena* arena) {
+  return Arena::CreateInternal< ::eap::Unit >(arena);
 }
-template<> PROTOBUF_NOINLINE ::Tile* Arena::CreateMaybeMessage< ::Tile >(Arena* arena) {
-  return Arena::CreateInternal< ::Tile >(arena);
+template<> PROTOBUF_NOINLINE ::eap::Tile* Arena::CreateMaybeMessage< ::eap::Tile >(Arena* arena) {
+  return Arena::CreateInternal< ::eap::Tile >(arena);
 }
-template<> PROTOBUF_NOINLINE ::Projectile* Arena::CreateMaybeMessage< ::Projectile >(Arena* arena) {
-  return Arena::CreateInternal< ::Projectile >(arena);
+template<> PROTOBUF_NOINLINE ::eap::Projectile* Arena::CreateMaybeMessage< ::eap::Projectile >(Arena* arena) {
+  return Arena::CreateInternal< ::eap::Projectile >(arena);
 }
-template<> PROTOBUF_NOINLINE ::Map* Arena::CreateMaybeMessage< ::Map >(Arena* arena) {
-  return Arena::CreateInternal< ::Map >(arena);
+template<> PROTOBUF_NOINLINE ::eap::Map* Arena::CreateMaybeMessage< ::eap::Map >(Arena* arena) {
+  return Arena::CreateInternal< ::eap::Map >(arena);
 }
-template<> PROTOBUF_NOINLINE ::State* Arena::CreateMaybeMessage< ::State >(Arena* arena) {
-  return Arena::CreateInternal< ::State >(arena);
+template<> PROTOBUF_NOINLINE ::eap::State* Arena::CreateMaybeMessage< ::eap::State >(Arena* arena) {
+  return Arena::CreateInternal< ::eap::State >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

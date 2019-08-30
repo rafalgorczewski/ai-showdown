@@ -48,19 +48,22 @@ struct TableStruct_common_2eproto {
   static const ::google::protobuf::uint32 offsets[];
 };
 void AddDescriptors_common_2eproto();
+namespace eap {
 class Position;
 class PositionDefaultTypeInternal;
 extern PositionDefaultTypeInternal _Position_default_instance_;
+}  // namespace eap
 namespace google {
 namespace protobuf {
-template<> ::Position* Arena::CreateMaybeMessage<::Position>(Arena*);
+template<> ::eap::Position* Arena::CreateMaybeMessage<::eap::Position>(Arena*);
 }  // namespace protobuf
 }  // namespace google
+namespace eap {
 
 // ===================================================================
 
 class Position final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Position) */ {
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:eap.Position) */ {
  public:
   Position();
   virtual ~Position();
@@ -166,7 +169,7 @@ class Position final :
   ::google::protobuf::int32 y() const;
   void set_y(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:Position)
+  // @@protoc_insertion_point(class_scope:eap.Position)
  private:
   class HasBitSetters;
 
@@ -192,13 +195,13 @@ inline void Position::clear_x() {
   x_ = 0;
 }
 inline ::google::protobuf::int32 Position::x() const {
-  // @@protoc_insertion_point(field_get:Position.x)
+  // @@protoc_insertion_point(field_get:eap.Position.x)
   return x_;
 }
 inline void Position::set_x(::google::protobuf::int32 value) {
   
   x_ = value;
-  // @@protoc_insertion_point(field_set:Position.x)
+  // @@protoc_insertion_point(field_set:eap.Position.x)
 }
 
 // int32 y = 2;
@@ -206,13 +209,13 @@ inline void Position::clear_y() {
   y_ = 0;
 }
 inline ::google::protobuf::int32 Position::y() const {
-  // @@protoc_insertion_point(field_get:Position.y)
+  // @@protoc_insertion_point(field_get:eap.Position.y)
   return y_;
 }
 inline void Position::set_y(::google::protobuf::int32 value) {
   
   y_ = value;
-  // @@protoc_insertion_point(field_set:Position.y)
+  // @@protoc_insertion_point(field_set:eap.Position.y)
 }
 
 #ifdef __GNUC__
@@ -221,6 +224,7 @@ inline void Position::set_y(::google::protobuf::int32 value) {
 
 // @@protoc_insertion_point(namespace_scope)
 
+}  // namespace eap
 
 // @@protoc_insertion_point(global_scope)
 
