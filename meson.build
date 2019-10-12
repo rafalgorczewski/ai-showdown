@@ -26,9 +26,20 @@ elif get_option('buildtype') == 'release'
 endif
 
 protos_src = ['protos-cpp/common.pb.cc', 'protos-cpp/state.pb.cc', 'protos-cpp/result.pb.cc']
-engine_src = ['src/engine.cpp']
+engine_src = [
+'src/window.cpp',
+'src/animation.cpp',
+'src/spritecontroller.cpp',
+'src/engine.cpp',
+'src/map.cpp',
+'src/unit.cpp',
+'src/mapparser.cpp',
+'src/knight.cpp',
+'src/archer.cpp',
+'src/bomberman.cpp',
+]
 
-sources = [ protos_src ]
+sources = [ protos_src, engine_src ]
 
 include_dir = include_directories(['include', 'protos-cpp'])
 
