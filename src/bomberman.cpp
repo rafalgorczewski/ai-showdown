@@ -10,8 +10,4 @@ namespace eape {
     // TODO
   }
 
-  std::string Bomberman::get_texture_name() const {
-    return "bomberman";
-  }
-
 }  // namespace eape

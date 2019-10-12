@@ -5,14 +5,12 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "map.hpp"
-
+#include "drawable.hpp"
 namespace eape {
 
-  class Unit {
+  class Unit : public Drawable {
    public:
-    explicit Unit(int id);
-    Unit(int id, sf::Vector2i position);
+    Unit(int id, const SpriteController& sprite_controller, sf::Vector2i position = {});
     virtual ~Unit() = default;
 
     virtual bool can_attack(const Map& map, Unit& enemy) const = 0;
@@ -24,8 +22,6 @@ namespace eape {
     void set_position(sf::Vector2i new_position);
 
     void move_by(sf::Vector2i offset);
-
-    virtual std::string get_texture_name() const = 0;
 
    private:
     int m_id;

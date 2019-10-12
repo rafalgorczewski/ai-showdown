@@ -10,8 +10,4 @@ namespace eape {
     // TODO
   }
 
-  std::string Archer::get_texture_name() const {
-    return "archer";
-  }
-
 }  // namespace eape

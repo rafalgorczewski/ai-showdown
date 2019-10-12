@@ -7,7 +7,7 @@
 #include <vector>
 
 #include "map.hpp"
-#include "spritecontroller.hpp"
+#include "projectile.hpp"
 #include "texturesmanager.hpp"
 #include "unit.hpp"
 #include "window.hpp"
@@ -38,6 +38,7 @@ namespace eape {
     bool next_turn_requested() const;
 
     void handle_input();
+    void handle_arrow_keys();
     void update_environment();
     void clean();
     void draw();
@@ -52,7 +53,8 @@ namespace eape {
     std::string m_lhs_bot_path;
     std::string m_rhs_bot_path;
 
-    Window m_window{ { 1280, 900 }, "Es Aj Pokazdowna" };
+    Window m_window;
+    sf::View m_view;
 
     Turn m_turn = Turn::Lhs;
 
@@ -61,8 +63,6 @@ namespace eape {
     std::vector<std::shared_ptr<Unit>> m_rhs_units;
 
     TexturesManager m_textures_manager;
-
-    std::unordered_map<int, SpriteController> m_sprite_controllers;
   };
 
 }  // namespace eape

@@ -11,7 +11,6 @@ namespace eape {
 
     bool can_attack(const Map& map, Unit& enemy) const override;
     void attack(Unit& enemy) const override;
-    std::string get_texture_name() const override;
   };
 
 }  // namespace eape

@@ -10,8 +10,4 @@ namespace eape {
     // TODO
   }
 
-  std::string Knight::get_texture_name() const {
-    return "knight";
-  }
-
 }  // namespace eape

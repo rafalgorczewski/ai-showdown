@@ -2,10 +2,8 @@
 
 namespace eape {
 
-  Unit::Unit(int id) : Unit(id, {}) {
-  }
-
-  Unit::Unit(int id, sf::Vector2i position) : m_id(id), m_position(position) {
+  Unit::Unit(int id, const SpriteController& sprite_controller, sf::Vector2i position)
+      : Drawable(sprite_controller), m_id(id), m_position(position) {
   }
 
   int Unit::get_id() const {

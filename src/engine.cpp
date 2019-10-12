@@ -8,9 +8,17 @@ namespace eape {
   const std::string STATE_FILENAME = "state.eaps";
   const std::string RESULT_FILENAME = "result.eapr";
 
-  Engine::Engine(const std::string& lhs_bot_path,
-                 const std::string& rhs_bot_path)
-      : m_lhs_bot_path(lhs_bot_path), m_rhs_bot_path(rhs_bot_path) {
+  const sf::Vector2u WINDOW_SIZE = { 1280, 900 };
+
+  Engine::Engine(const std::string& lhs_bot_path, const std::string& rhs_bot_path)
+      : m_lhs_bot_path(lhs_bot_path),
+        m_rhs_bot_path(rhs_bot_path),
+        m_window(WINDOW_SIZE, "Es Aj Pokazdowna"),
+        m_view({ 0,
+                 0,
+                 static_cast<float>(WINDOW_SIZE.x),
+                 static_cast<float>(WINDOW_SIZE.y) }) {
+    m_window.setView(m_view);
   }
 
   void Engine::load(const std::string& map_path) {
@@ -49,16 +57,15 @@ namespace eape {
     const auto [map, units] = map_parser.parse_map();
     const auto& [lhs_units, rhs_units] = units;
 
-    std::tie(m_map, m_lhs_units, m_rhs_units) =
-      std::tie(map, lhs_units, rhs_units);
+    std::tie(m_map, m_lhs_units, m_rhs_units) = std::tie(map, lhs_units, rhs_units);
 
     for (auto lhs_unit : lhs_units) {
-      m_sprite_controllers.emplace(
+      m_units_sprite_controllers.emplace(
         lhs_unit->get_id(),
         SpriteController(m_textures_manager[lhs_unit->get_texture_name()]));
     }
     for (auto rhs_unit : rhs_units) {
-      m_sprite_controllers.emplace(
+      m_units_sprite_controllers.emplace(
         rhs_unit->get_id(),
         SpriteController(m_textures_manager[rhs_unit->get_texture_name()]));
     }
@@ -93,7 +100,21 @@ namespace eape {
   }
 
   void Engine::handle_input() {
-    // TODO
+    handle_arrow_keys();
+  }
+
+  void Engine::handle_arrow_keys() {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+      m_view.move({ 0, -5 });
+    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+      m_view.move({ 0, 5 });
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+      m_view.move({ -5, 0 });
+    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+      m_view.move({ 5, 0 });
+    }
+    m_window.setView(m_view);
   }
 
   void Engine::update_environment() {
@@ -118,20 +139,18 @@ namespace eape {
 
   void Engine::draw_units() {
     for (auto lhs_unit : m_lhs_units) {
-      auto& unit_sprite =
-        m_sprite_controllers.at(lhs_unit->get_id()).get_sprite();
+      auto& unit_sprite = m_units_sprite_controllers.at(lhs_unit->get_id()).get_sprite();
       auto sprite_size = unit_sprite.getTexture()->getSize();
       unit_sprite.setPosition(lhs_unit->get_position().x * sprite_size.x,
                               lhs_unit->get_position().y * sprite_size.y);
     }
     for (auto rhs_unit : m_rhs_units) {
-      auto& unit_sprite =
-        m_sprite_controllers.at(rhs_unit->get_id()).get_sprite();
+      auto& unit_sprite = m_units_sprite_controllers.at(rhs_unit->get_id()).get_sprite();
       auto sprite_size = unit_sprite.getTexture()->getSize();
       unit_sprite.setPosition(rhs_unit->get_position().x * sprite_size.x,
                               rhs_unit->get_position().y * sprite_size.y);
     }
-    for (auto& [id, sprite_controller] : m_sprite_controllers) {
+    for (auto& [id, sprite_controller] : m_units_sprite_controllers) {
       m_window.draw(sprite_controller.get_sprite());
     }
   }
