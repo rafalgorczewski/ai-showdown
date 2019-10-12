@@ -17,7 +17,7 @@
 #include <google/protobuf/port_def.inc>
 
 extern PROTOBUF_INTERNAL_EXPORT_common_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Position_common_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_state_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Projectile_state_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_state_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Projectile_state_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_state_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Tile_state_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_state_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Unit_state_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_state_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_Map_state_2eproto;
@@ -84,8 +84,9 @@ static void InitDefaultsProjectile_state_2eproto() {
   ::eap::Projectile::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_Projectile_state_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsProjectile_state_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<1> scc_info_Projectile_state_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsProjectile_state_2eproto}, {
+      &scc_info_Position_common_2eproto.base,}};
 
 static void InitDefaultsMap_state_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -156,6 +157,7 @@ const ::google::protobuf::uint32 TableStruct_state_2eproto::offsets[] PROTOBUF_S
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::eap::Projectile, thrown_by_unit_id_),
   PROTOBUF_FIELD_OFFSET(::eap::Projectile, type_),
+  PROTOBUF_FIELD_OFFSET(::eap::Projectile, position_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::eap::Map, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -177,8 +179,8 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 0, -1, sizeof(::eap::Unit)},
   { 9, -1, sizeof(::eap::Tile)},
   { 16, -1, sizeof(::eap::Projectile)},
-  { 23, -1, sizeof(::eap::Map)},
-  { 33, -1, sizeof(::eap::State)},
+  { 24, -1, sizeof(::eap::Map)},
+  { 34, -1, sizeof(::eap::State)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -202,20 +204,21 @@ const char descriptor_table_protodef_state_2eproto[] =
   "th\030\004 \001(\005\"m\n\004Tile\022\034\n\004type\030\001 \001(\0162\016.eap.Til"
   "e.Type\022\037\n\010position\030\002 \001(\0132\r.eap.Position\""
   "&\n\004Type\022\t\n\005FLOOR\020\000\022\t\n\005WATER\020\001\022\010\n\004WALL\020\002\""
-  "]\n\nProjectile\022\031\n\021thrown_by_unit_id\030\001 \001(\005"
-  "\022\"\n\004type\030\002 \001(\0162\024.eap.Projectile.Type\"\020\n\004"
-  "Type\022\010\n\004BOMB\020\000\"\241\001\n\003Map\022\033\n\004size\030\001 \001(\0132\r.e"
-  "ap.Position\022\030\n\005tiles\030\002 \003(\0132\t.eap.Tile\022\035\n"
-  "\nally_units\030\003 \003(\0132\t.eap.Unit\022\036\n\013enemy_un"
-  "its\030\004 \003(\0132\t.eap.Unit\022$\n\013projectiles\030\005 \003("
-  "\0132\017.eap.Projectile\"\036\n\005State\022\025\n\003map\030\001 \001(\013"
-  "2\010.eap.Map*.\n\005Class\022\n\n\006KNIGHT\020\000\022\n\n\006ARCHE"
-  "R\020\001\022\r\n\tBOMBERMAN\020\002b\006proto3"
+  "~\n\nProjectile\022\031\n\021thrown_by_unit_id\030\001 \001(\005"
+  "\022\"\n\004type\030\002 \001(\0162\024.eap.Projectile.Type\022\037\n\010"
+  "position\030\003 \001(\0132\r.eap.Position\"\020\n\004Type\022\010\n"
+  "\004BOMB\020\000\"\241\001\n\003Map\022\033\n\004size\030\001 \001(\0132\r.eap.Posi"
+  "tion\022\030\n\005tiles\030\002 \003(\0132\t.eap.Tile\022\035\n\nally_u"
+  "nits\030\003 \003(\0132\t.eap.Unit\022\036\n\013enemy_units\030\004 \003"
+  "(\0132\t.eap.Unit\022$\n\013projectiles\030\005 \003(\0132\017.eap"
+  ".Projectile\"\036\n\005State\022\025\n\003map\030\001 \001(\0132\010.eap."
+  "Map*.\n\005Class\022\n\n\006KNIGHT\020\000\022\n\n\006ARCHER\020\001\022\r\n\t"
+  "BOMBERMAN\020\002b\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_state_2eproto = {
   false, InitDefaults_state_2eproto, 
   descriptor_table_protodef_state_2eproto,
-  "state.proto", &assign_descriptors_table_state_2eproto, 586,
+  "state.proto", &assign_descriptors_table_state_2eproto, 619,
 };
 
 void AddDescriptors_state_2eproto() {
@@ -1062,14 +1065,28 @@ void Tile::InternalSwap(Tile* other) {
 // ===================================================================
 
 void Projectile::InitAsDefaultInstance() {
+  ::eap::_Projectile_default_instance_._instance.get_mutable()->position_ = const_cast< ::eap::Position*>(
+      ::eap::Position::internal_default_instance());
 }
 class Projectile::HasBitSetters {
  public:
+  static const ::eap::Position& position(const Projectile* msg);
 };
 
+const ::eap::Position&
+Projectile::HasBitSetters::position(const Projectile* msg) {
+  return *msg->position_;
+}
+void Projectile::clear_position() {
+  if (GetArenaNoVirtual() == nullptr && position_ != nullptr) {
+    delete position_;
+  }
+  position_ = nullptr;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Projectile::kThrownByUnitIdFieldNumber;
 const int Projectile::kTypeFieldNumber;
+const int Projectile::kPositionFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Projectile::Projectile()
@@ -1081,6 +1098,11 @@ Projectile::Projectile(const Projectile& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_position()) {
+    position_ = new ::eap::Position(*from.position_);
+  } else {
+    position_ = nullptr;
+  }
   ::memcpy(&thrown_by_unit_id_, &from.thrown_by_unit_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&type_) -
     reinterpret_cast<char*>(&thrown_by_unit_id_)) + sizeof(type_));
@@ -1088,9 +1110,11 @@ Projectile::Projectile(const Projectile& from)
 }
 
 void Projectile::SharedCtor() {
-  ::memset(&thrown_by_unit_id_, 0, static_cast<size_t>(
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_Projectile_state_2eproto.base);
+  ::memset(&position_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&type_) -
-      reinterpret_cast<char*>(&thrown_by_unit_id_)) + sizeof(type_));
+      reinterpret_cast<char*>(&position_)) + sizeof(type_));
 }
 
 Projectile::~Projectile() {
@@ -1099,6 +1123,7 @@ Projectile::~Projectile() {
 }
 
 void Projectile::SharedDtor() {
+  if (this != internal_default_instance()) delete position_;
 }
 
 void Projectile::SetCachedSize(int size) const {
@@ -1116,6 +1141,10 @@ void Projectile::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  if (GetArenaNoVirtual() == nullptr && position_ != nullptr) {
+    delete position_;
+  }
+  position_ = nullptr;
   ::memset(&thrown_by_unit_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&type_) -
       reinterpret_cast<char*>(&thrown_by_unit_id_)) + sizeof(type_));
@@ -1150,6 +1179,19 @@ const char* Projectile::_InternalParse(const char* begin, const char* end, void*
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
+      // .eap.Position position = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::eap::Position::_InternalParse;
+        object = msg->mutable_position();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -1165,6 +1207,9 @@ const char* Projectile::_InternalParse(const char* begin, const char* end, void*
     }  // switch
   }  // while
   return ptr;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool Projectile::MergePartialFromCodedStream(
@@ -1198,6 +1243,17 @@ bool Projectile::MergePartialFromCodedStream(
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
           set_type(static_cast< ::eap::Projectile_Type >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .eap.Position position = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_position()));
         } else {
           goto handle_unusual;
         }
@@ -1242,6 +1298,12 @@ void Projectile::SerializeWithCachedSizes(
       2, this->type(), output);
   }
 
+  // .eap.Position position = 3;
+  if (this->has_position()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, HasBitSetters::position(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -1266,6 +1328,13 @@ void Projectile::SerializeWithCachedSizes(
       2, this->type(), target);
   }
 
+  // .eap.Position position = 3;
+  if (this->has_position()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        3, HasBitSetters::position(this), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -1286,6 +1355,13 @@ size_t Projectile::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // .eap.Position position = 3;
+  if (this->has_position()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *position_);
+  }
 
   // int32 thrown_by_unit_id = 1;
   if (this->thrown_by_unit_id() != 0) {
@@ -1327,6 +1403,9 @@ void Projectile::MergeFrom(const Projectile& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.has_position()) {
+    mutable_position()->::eap::Position::MergeFrom(from.position());
+  }
   if (from.thrown_by_unit_id() != 0) {
     set_thrown_by_unit_id(from.thrown_by_unit_id());
   }
@@ -1360,6 +1439,7 @@ void Projectile::Swap(Projectile* other) {
 void Projectile::InternalSwap(Projectile* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(position_, other->position_);
   swap(thrown_by_unit_id_, other->thrown_by_unit_id_);
   swap(type_, other->type_);
 }

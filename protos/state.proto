@@ -32,7 +32,8 @@ message Projectile {
 	enum Type {
 		BOMB = 0;
 	}
-	Type type = 2;
+  Type type = 2;
+  Position position = 3;
 }
 
 message Map {

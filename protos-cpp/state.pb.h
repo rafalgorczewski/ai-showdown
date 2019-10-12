@@ -549,6 +549,15 @@ class Projectile final :
 
   // accessors -------------------------------------------------------
 
+  // .eap.Position position = 3;
+  bool has_position() const;
+  void clear_position();
+  static const int kPositionFieldNumber = 3;
+  const ::eap::Position& position() const;
+  ::eap::Position* release_position();
+  ::eap::Position* mutable_position();
+  void set_allocated_position(::eap::Position* position);
+
   // int32 thrown_by_unit_id = 1;
   void clear_thrown_by_unit_id();
   static const int kThrownByUnitIdFieldNumber = 1;
@@ -566,6 +575,7 @@ class Projectile final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::eap::Position* position_;
   ::google::protobuf::int32 thrown_by_unit_id_;
   int type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -1044,6 +1054,51 @@ inline void Projectile::set_type(::eap::Projectile_Type value) {
   
   type_ = value;
   // @@protoc_insertion_point(field_set:eap.Projectile.type)
+}
+
+// .eap.Position position = 3;
+inline bool Projectile::has_position() const {
+  return this != internal_default_instance() && position_ != nullptr;
+}
+inline const ::eap::Position& Projectile::position() const {
+  const ::eap::Position* p = position_;
+  // @@protoc_insertion_point(field_get:eap.Projectile.position)
+  return p != nullptr ? *p : *reinterpret_cast<const ::eap::Position*>(
+      &::eap::_Position_default_instance_);
+}
+inline ::eap::Position* Projectile::release_position() {
+  // @@protoc_insertion_point(field_release:eap.Projectile.position)
+  
+  ::eap::Position* temp = position_;
+  position_ = nullptr;
+  return temp;
+}
+inline ::eap::Position* Projectile::mutable_position() {
+  
+  if (position_ == nullptr) {
+    auto* p = CreateMaybeMessage<::eap::Position>(GetArenaNoVirtual());
+    position_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:eap.Projectile.position)
+  return position_;
+}
+inline void Projectile::set_allocated_position(::eap::Position* position) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(position_);
+  }
+  if (position) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      position = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, position, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  position_ = position;
+  // @@protoc_insertion_point(field_set_allocated:eap.Projectile.position)
 }
 
 // -------------------------------------------------------------------
