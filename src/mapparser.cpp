@@ -11,6 +11,8 @@ namespace eape {
   }
 
   MapParsedEntities MapParser::parse_map() const {
+    int incremental_id = 0;
+
     Map map;
     std::vector<std::shared_ptr<Unit>> lhs_units;
     std::vector<std::shared_ptr<Unit>> rhs_units;
@@ -40,37 +42,37 @@ namespace eape {
           case 'a':
             [[fallthrough]];
           case 'b': {
-            lhs_units.push_back(std::make_shared<Knight>());
+            lhs_units.push_back(std::make_shared<Knight>(incremental_id++, sf::Vector2i{x, y}));
             break;
           }
           case 'c':
             [[fallthrough]];
           case 'd': {
-            lhs_units.push_back(std::make_shared<Archer>());
+            lhs_units.push_back(std::make_shared<Archer>(incremental_id++, sf::Vector2i{x, y}));
             break;
           }
           case 'e':
             [[fallthrough]];
           case 'f': {
-            lhs_units.push_back(std::make_shared<Bomberman>());
+            lhs_units.push_back(std::make_shared<Bomberman>(incremental_id++, sf::Vector2i{x, y}));
             break;
           }
           case 'g':
             [[fallthrough]];
           case 'h': {
-            rhs_units.push_back(std::make_shared<Knight>());
+            rhs_units.push_back(std::make_shared<Knight>(incremental_id++, sf::Vector2i{x, y}));
             break;
           }
           case 'i':
             [[fallthrough]];
           case 'j': {
-            rhs_units.push_back(std::make_shared<Archer>());
+            rhs_units.push_back(std::make_shared<Archer>(incremental_id++, sf::Vector2i{x, y}));
             break;
           }
           case 'k':
             [[fallthrough]];
           case 'l': {
-            rhs_units.push_back(std::make_shared<Bomberman>());
+            rhs_units.push_back(std::make_shared<Bomberman>(incremental_id++, sf::Vector2i{x, y}));
             break;
           }
         }
