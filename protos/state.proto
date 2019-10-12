@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+import "common.proto";
+
+enum Class {
+	KNIGHT = 0;
+	ARCHER = 1;
+	BOMBERMAN = 2;
+}
+
+message Unit {
+	int32 id = 1;
+	Position position = 2;
+	Class class = 3;
+	int32 health = 4;
+}
+
+message Tile {
+	enum Type {
+		FLOOR = 0;
+		WATER = 1;
+		WALL = 2;
+	}
+	Type type = 1;
+	Position position = 2;
+}
+
+message Projectile {
+	int32 thrown_by_unit_id = 1;
+	enum Type {
+		BOMB = 0;
+	}
+	Type type = 2;
+}
+
+message Map {
+	repeated Tile tiles = 1;
+	repeated Unit ally_units = 2;
+	repeated Unit enemy_units = 3;
+	repeated Projectile projectiles = 4;
+}
+
+message State {
+	Map map = 1;
+}
