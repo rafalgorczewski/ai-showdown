@@ -9,6 +9,7 @@
 
 #include "map.hpp"
 #include "unit.hpp"
+#include "texturesmanager.hpp"
 
 namespace eape {
 
@@ -23,7 +24,7 @@ namespace eape {
    public:
     MapParser(const std::string& path);
 
-    MapParsedEntities parse_map() const;
+    MapParsedEntities parse_map(TexturesManager& textures_manager) const;
 
    private:
     std::string m_map_path;

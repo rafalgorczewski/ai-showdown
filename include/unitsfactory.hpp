@@ -14,7 +14,6 @@
 #include "unit.hpp"
 
 namespace eape {
-  // build<Archer>
 
   class UnitsFactory {
    public:
@@ -23,17 +22,17 @@ namespace eape {
     template <typename UnitType>
     requires std::is_base_of_v<Unit, std::remove_cvref_t<UnitType>> auto build(
       int id, sf::Vector2i position) {
-      return build(std::type_identity<std::remove_cvref_t<UnitType>>, id, position);
+      return build(std::type_identity<std::remove_cvref_t<UnitType>>{}, id, position);
     }
 
    private:
     std::shared_ptr<Knight> build(std::type_identity<Knight>,
                                   int id,
                                   sf::Vector2i position);
-    std::shared_ptr<Archer> build_archer(std::type_identity<Knight>,
+    std::shared_ptr<Archer> build(std::type_identity<Archer>,
                                          int id,
                                          sf::Vector2i position);
-    std::shared_ptr<Bomberman> build_bomberman(std::type_identity<Knight>,
+    std::shared_ptr<Bomberman> build(std::type_identity<Bomberman>,
                                                int id,
                                                sf::Vector2i position);
 

@@ -16,8 +16,6 @@ namespace eape {
 
     sf::Vector2i get_destination() const;
 
-    virtual std::string get_texture_name() const = 0;
-
    private:
     sf::Vector2i m_destination;
   };
