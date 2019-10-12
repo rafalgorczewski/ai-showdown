@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "common.proto";
+
+message Action {
+	int32 entity_id = 1;
+	Position target_position = 2;
+	enum Type {
+		MOVEMENT = 0;
+		ATTACK = 1;
+	}
+	Type type = 3;
+}
+
+message Result {
+	repeated Action actions = 1;
+}
