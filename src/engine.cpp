@@ -3,6 +3,7 @@
 #include <cstdlib>
 
 #include "mapparser.hpp"
+#include "state.pb.h"
 
 namespace eape {
 
@@ -78,7 +79,16 @@ namespace eape {
   }
 
   void Engine::create_initial_state() {
-    // TODO
+    eap::State state_proto;
+    state_proto.mutable_map()->CopyFrom(m_map.serialize_partly());
+
+    if (m_turn == Turn::Lhs) {
+      for (const auto unit : m_lhs_units) {
+        auto const ally_unit_proto =
+          state_proto.mutable_map()->add_ally_units();
+        ally_unit_proto->CopyFrom(unit->serialize());
+      }
+    } // TODO
   }
 
   void Engine::load_state() {

@@ -8,7 +8,12 @@ namespace eape {
 
   void Knight::attack(Unit& enemy) {
     // TODO
-    use_animation("chuj");
+  }
+
+  eap::Unit Knight::serialize() const {
+    auto unit_proto = serialize_partly();
+    unit_proto.set_class_(eap::Class::KNIGHT);
+    return unit_proto;
   }
 
 }  // namespace eape

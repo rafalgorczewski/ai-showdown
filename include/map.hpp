@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 
+#include "state.pb.h"
 #include "texturesmanager.hpp"
 
 namespace eape {
@@ -23,6 +24,11 @@ namespace eape {
 
     std::vector<sf::Sprite>& get_sprites(TexturesManager& textures_manager) &;
     const std::vector<sf::Sprite>& get_sprites() const&& = delete;
+
+    sf::Vector2i get_size() const;
+
+    // Serialize size and tiles only
+    eap::Map serialize_partly() const;
 
    private:
     void generate_sprites(TexturesManager& textures_manager);

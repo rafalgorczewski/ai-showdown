@@ -55,4 +55,15 @@ namespace eape {
     return m_health <= 0;
   }
 
+  eap::Unit Unit::serialize_partially() const {
+    eap::Unit unit_proto;
+
+    unit_proto.set_id(m_id);
+    unit_proto.mutable_position()->set_x(m_position.x);
+    unit_proto.mutable_position()->set_y(m_position.y);
+    unit_proto.set_health(m_health);
+
+    return unit_proto;
+  }
+
 }  // namespace eape

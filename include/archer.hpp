@@ -12,6 +12,8 @@ namespace eape {
 
     bool can_attack(const Map& map, Unit& enemy) const override;
     void attack(Unit& enemy) override;
+
+    eap::Unit serialize() const override;
   };
 
 }  // namespace eape

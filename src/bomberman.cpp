@@ -10,4 +10,10 @@ namespace eape {
     // TODO
   }
 
+  eap::Unit Bomberman::serialize() const {
+    auto unit_proto = serialize_partly();
+    unit_proto.set_class_(eap::Class::BOMBERMAN);
+    return unit_proto;
+  }
+
 }  // namespace eape

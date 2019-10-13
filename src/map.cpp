@@ -27,6 +27,44 @@ namespace eape {
     return *m_sprites;
   }
 
+  sf::Vector2i Map::get_size() const {
+    if (m_tiles.empty()) {
+      return {};
+    }
+    return { m_tiles.size(), m_tiles.front().size() };
+  }
+
+  eap::Map Map::serialize_partly() const {
+    eap::Map map_proto;
+
+    map_proto.mutable_size()->set_x(m_map.get_size().x);
+    map_proto.mutable_size()->set_x(m_map.get_size().y);
+
+    for (std::size_t x = 0; x < get_size().x; ++x) {
+      for (std::size_t y = 0; y < get_size().y; ++y) {
+        auto const tile_proto = map_proto.add_tiles();
+        switch (m_tiles[x][y]) {
+          case Tile::Floor: {
+            tile_proto->set_type(eap::Tile_Type::Tile_Type_FLOOR);
+            break;
+          }
+          case Tile::Water: {
+            tile_proto->set_type(eap::Tile_Type::Tile_Type_WATER);
+            break;
+          }
+          case Tile::Wall: {
+            tile_proto->set_type(eap::Tile_Type::Tile_Type_WALL);
+            break;
+          }
+        }
+        tile_proto->mutable_position()->set_x(x);
+        tile_proto->mutable_position()->set_x(y);
+      }
+    }
+
+    return map_proto;
+  }
+
   void Map::generate_sprites(TexturesManager& textures_manager) {
     m_sprites.emplace();
     for (std::size_t y = 0; const auto& row : m_tiles) {

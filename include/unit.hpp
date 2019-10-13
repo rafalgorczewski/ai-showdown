@@ -7,6 +7,7 @@
 #include "config.hpp"
 #include "drawable.hpp"
 #include "map.hpp"
+#include "state.pb.h"
 
 namespace eape {
 
@@ -29,6 +30,11 @@ namespace eape {
     sf::Vector2i get_position() const;
 
     bool is_dead() const;
+
+    virtual eap::Unit serialize() const = 0;
+
+   private:
+    eap::Unit serialize_partially() const;
 
    private:
     int m_id;
