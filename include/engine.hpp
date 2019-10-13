@@ -3,19 +3,21 @@
 
 #include <memory>
 #include <string>
-#include <vector>
 #include <unordered_map>
+#include <vector>
 
 #include "map.hpp"
-#include "unit.hpp"
-#include "window.hpp"
 #include "spritecontroller.hpp"
 #include "texturesmanager.hpp"
+#include "unit.hpp"
+#include "window.hpp"
 
 namespace eape {
 
   class Engine {
    public:
+    Engine(const std::string& lhs_bot_path, const std::string& rhs_bot_path);
+
     void load(const std::string& map_path);
     bool is_running() const;
     void update();
@@ -37,13 +39,19 @@ namespace eape {
 
     void handle_input();
     void update_environment();
+    void clean();
     void draw();
     void draw_map();
     void draw_units();
+    void draw_projectiles();
+    void flush();
 
     void flip_active_player();
 
    private:
+    std::string m_lhs_bot_path;
+    std::string m_rhs_bot_path;
+
     Window m_window{ { 1280, 900 }, "Es Aj Pokazdowna" };
 
     Turn m_turn = Turn::Lhs;

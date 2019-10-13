@@ -6,8 +6,6 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "map.hpp"
-
 namespace eape {
 
   class TexturesManager {

@@ -1,4 +1,5 @@
 #include <fstream>
+#include <iostream>
 
 #include "archer.hpp"
 #include "bomberman.hpp"
@@ -20,10 +21,15 @@ namespace eape {
     std::ifstream map_stream(m_map_path);
     std::string map_row;
 
-    for (auto y = 0; std::getline(map_stream, map_row); ++y) {
+    if (!map_stream.is_open()) {
+      std::cerr << "Could not open map file!" << std::endl;
+      return {};
+    }
+
+    for (auto x = 0; std::getline(map_stream, map_row); ++x) {
       map.add_row(map_row.size());
 
-      for (auto x = 0; auto tile_char : map_row) {
+      for (auto y = 0; auto tile_char : map_row) {
         switch (tile_char) {
           default:
             [[fallthrough]];
@@ -42,41 +48,47 @@ namespace eape {
           case 'a':
             [[fallthrough]];
           case 'b': {
-            lhs_units.push_back(std::make_shared<Knight>(incremental_id++, sf::Vector2i{x, y}));
+            lhs_units.push_back(
+              std::make_shared<Knight>(incremental_id++, sf::Vector2i{ y, x }));
             break;
           }
           case 'c':
             [[fallthrough]];
           case 'd': {
-            lhs_units.push_back(std::make_shared<Archer>(incremental_id++, sf::Vector2i{x, y}));
+            lhs_units.push_back(
+              std::make_shared<Archer>(incremental_id++, sf::Vector2i{ y, x }));
             break;
           }
           case 'e':
             [[fallthrough]];
           case 'f': {
-            lhs_units.push_back(std::make_shared<Bomberman>(incremental_id++, sf::Vector2i{x, y}));
+            lhs_units.push_back(std::make_shared<Bomberman>(
+              incremental_id++, sf::Vector2i{ y, x }));
             break;
           }
           case 'g':
             [[fallthrough]];
           case 'h': {
-            rhs_units.push_back(std::make_shared<Knight>(incremental_id++, sf::Vector2i{x, y}));
+            rhs_units.push_back(
+              std::make_shared<Knight>(incremental_id++, sf::Vector2i{ y, x }));
             break;
           }
           case 'i':
             [[fallthrough]];
           case 'j': {
-            rhs_units.push_back(std::make_shared<Archer>(incremental_id++, sf::Vector2i{x, y}));
+            rhs_units.push_back(
+              std::make_shared<Archer>(incremental_id++, sf::Vector2i{ y, x }));
             break;
           }
           case 'k':
             [[fallthrough]];
           case 'l': {
-            rhs_units.push_back(std::make_shared<Bomberman>(incremental_id++, sf::Vector2i{x, y}));
+            rhs_units.push_back(std::make_shared<Bomberman>(
+              incremental_id++, sf::Vector2i{ y, x }));
             break;
           }
         }
-        ++x;
+        ++y;
       }
     }
     return { std::move(map), { std::move(lhs_units), std::move(rhs_units) } };

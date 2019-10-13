@@ -37,6 +37,7 @@ engine_src = [
 'src/knight.cpp',
 'src/archer.cpp',
 'src/bomberman.cpp',
+'src/texturesmanager.cpp',
 ]
 
 sources = [ protos_src, engine_src ]

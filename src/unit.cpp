@@ -3,11 +3,9 @@
 namespace eape {
 
   Unit::Unit(int id) : Unit(id, {}) {
-
   }
 
   Unit::Unit(int id, sf::Vector2i position) : m_id(id), m_position(position) {
-
   }
 
   int Unit::get_id() const {
@@ -26,4 +24,4 @@ namespace eape {
     m_position += offset;
   }
 
-}
+}  // namespace eape
