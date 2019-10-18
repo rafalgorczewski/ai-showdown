@@ -8,8 +8,8 @@
 #include <vector>
 
 #include "map.hpp"
-#include "unit.hpp"
 #include "texturesmanager.hpp"
+#include "unit.hpp"
 
 namespace eape {
 

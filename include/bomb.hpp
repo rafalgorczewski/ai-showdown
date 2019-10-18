@@ -1,9 +1,8 @@
 #ifndef EAPE_BOMB_HPP
 #define EAPE_BOMB_HPP
 
-#include <string>
-
 #include <SFML/Graphics.hpp>
+#include <string>
 
 #include "projectile.hpp"
 

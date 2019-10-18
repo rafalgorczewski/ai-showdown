@@ -8,9 +8,6 @@ namespace eape {
   class Archer : public Unit {
    public:
     using Unit::Unit;
-
-    bool can_attack(const Map& map, Unit& enemy) const override;
-    void attack(Unit& enemy) const override;
   };
 
 }  // namespace eape

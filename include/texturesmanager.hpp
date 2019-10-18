@@ -1,10 +1,9 @@
 #ifndef EAPE_TEXTURESMANAGER_HPP
 #define EAPE_TEXTURESMANAGER_HPP
 
+#include <SFML/Graphics.hpp>
 #include <string>
 #include <unordered_map>
-
-#include <SFML/Graphics.hpp>
 
 namespace eape {
 

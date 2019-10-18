@@ -1,7 +1,8 @@
+#include "mapparser.hpp"
+
 #include <fstream>
 #include <iostream>
 
-#include "mapparser.hpp"
 #include "unitsfactory.hpp"
 
 namespace eape {
@@ -9,7 +10,8 @@ namespace eape {
   MapParser::MapParser(const std::string& path) : m_map_path(path) {
   }
 
-  MapParsedEntities MapParser::parse_map(TexturesManager& textures_manager) const {
+  MapParsedEntities MapParser::parse_map(
+    TexturesManager& textures_manager) const {
     int incremental_id = 0;
 
     UnitsFactory units_factory(&textures_manager);
@@ -47,15 +49,15 @@ namespace eape {
           case 'a':
             [[fallthrough]];
           case 'b': {
-            lhs_units.push_back(
-              units_factory.build<Knight>(incremental_id++, sf::Vector2i{ y, x }));
+            lhs_units.push_back(units_factory.build<Knight>(
+              incremental_id++, sf::Vector2i{ y, x }));
             break;
           }
           case 'c':
             [[fallthrough]];
           case 'd': {
-            lhs_units.push_back(
-              units_factory.build<Archer>(incremental_id++, sf::Vector2i{ y, x }));
+            lhs_units.push_back(units_factory.build<Archer>(
+              incremental_id++, sf::Vector2i{ y, x }));
             break;
           }
           case 'e':
@@ -68,15 +70,15 @@ namespace eape {
           case 'g':
             [[fallthrough]];
           case 'h': {
-            rhs_units.push_back(
-              units_factory.build<Knight>(incremental_id++, sf::Vector2i{ y, x }));
+            rhs_units.push_back(units_factory.build<Knight>(
+              incremental_id++, sf::Vector2i{ y, x }));
             break;
           }
           case 'i':
             [[fallthrough]];
           case 'j': {
-            rhs_units.push_back(
-              units_factory.build<Archer>(incremental_id++, sf::Vector2i{ y, x }));
+            rhs_units.push_back(units_factory.build<Archer>(
+              incremental_id++, sf::Vector2i{ y, x }));
             break;
           }
           case 'k':

@@ -1,6 +1,6 @@
-#include <utility>
-
 #include "drawable.hpp"
+
+#include <utility>
 
 namespace eape {
 

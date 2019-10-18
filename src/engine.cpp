@@ -1,6 +1,7 @@
+#include "engine.hpp"
+
 #include <cstdlib>
 
-#include "engine.hpp"
 #include "mapparser.hpp"
 
 namespace eape {
@@ -10,7 +11,8 @@ namespace eape {
 
   const sf::Vector2u WINDOW_SIZE = { 1280, 900 };
 
-  Engine::Engine(const std::string& lhs_bot_path, const std::string& rhs_bot_path)
+  Engine::Engine(const std::string& lhs_bot_path,
+                 const std::string& rhs_bot_path)
       : m_lhs_bot_path(lhs_bot_path),
         m_rhs_bot_path(rhs_bot_path),
         m_window(WINDOW_SIZE, "Es Aj Pokazdowna"),
@@ -57,7 +59,8 @@ namespace eape {
     const auto [map, units] = map_parser.parse_map(m_textures_manager);
     const auto& [lhs_units, rhs_units] = units;
 
-    std::tie(m_map, m_lhs_units, m_rhs_units) = std::tie(map, lhs_units, rhs_units);
+    std::tie(m_map, m_lhs_units, m_rhs_units) =
+      std::tie(map, lhs_units, rhs_units);
 
     for (auto lhs_unit : lhs_units) {
       m_units_sprite_controllers.emplace(
@@ -139,13 +142,15 @@ namespace eape {
 
   void Engine::draw_units() {
     for (auto lhs_unit : m_lhs_units) {
-      auto& unit_sprite = m_units_sprite_controllers.at(lhs_unit->get_id()).get_sprite();
+      auto& unit_sprite =
+        m_units_sprite_controllers.at(lhs_unit->get_id()).get_sprite();
       auto sprite_size = unit_sprite.getTexture()->getSize();
       unit_sprite.setPosition(lhs_unit->get_position().x * sprite_size.x,
                               lhs_unit->get_position().y * sprite_size.y);
     }
     for (auto rhs_unit : m_rhs_units) {
-      auto& unit_sprite = m_units_sprite_controllers.at(rhs_unit->get_id()).get_sprite();
+      auto& unit_sprite =
+        m_units_sprite_controllers.at(rhs_unit->get_id()).get_sprite();
       auto sprite_size = unit_sprite.getTexture()->getSize();
       unit_sprite.setPosition(rhs_unit->get_position().x * sprite_size.x,
                               rhs_unit->get_position().y * sprite_size.y);

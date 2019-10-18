@@ -1,9 +1,8 @@
 #ifndef EAPE_PROJECTILE_HPP
 #define EAPE_PROJECTILE_HPP
 
-#include <string>
-
 #include <SFML/Graphics.hpp>
+#include <string>
 
 #include "drawable.hpp"
 
@@ -11,7 +10,8 @@ namespace eape {
 
   class Projectile : public Drawable {
    public:
-    Projectile(sf::Vector2i destination, const SpriteController& sprite_controller);
+    Projectile(sf::Vector2i destination,
+               const SpriteController& sprite_controller);
     virtual ~Projectile() = default;
 
     sf::Vector2i get_destination() const;

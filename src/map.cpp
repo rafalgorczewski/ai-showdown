@@ -1,9 +1,9 @@
+#include "map.hpp"
+
 #include <fstream>
 #include <iostream>
 #include <utility>
 #include <vector>
-
-#include "map.hpp"
 
 namespace eape {
 

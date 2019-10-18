@@ -1,16 +1,17 @@
 #ifndef EAPE_UNIT_HPP
 #define EAPE_UNIT_HPP
 
-#include <string>
-
 #include <SFML/Graphics.hpp>
+#include <string>
 
 #include "drawable.hpp"
 namespace eape {
 
   class Unit : public Drawable {
    public:
-    Unit(int id, const SpriteController& sprite_controller, sf::Vector2i position = {});
+    Unit(int id,
+         const SpriteController& sprite_controller,
+         sf::Vector2i position = {});
     virtual ~Unit() = default;
 
     virtual bool can_attack(const Map& map, Unit& enemy) const = 0;
