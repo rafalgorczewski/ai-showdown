@@ -6,7 +6,7 @@ namespace eape {
     return true;  // TODO
   }
 
-  void Bomberman::attack(Unit& enemy) const {
+  void Bomberman::attack(Unit& enemy) {
     // TODO
   }
 

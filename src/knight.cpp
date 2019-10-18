@@ -6,8 +6,9 @@ namespace eape {
     return true;  // TODO
   }
 
-  void Knight::attack(Unit& enemy) const {
+  void Knight::attack(Unit& enemy) {
     // TODO
+    use_animation("chuj");
   }
 
 }  // namespace eape

@@ -7,12 +7,30 @@
 
 namespace eape {
 
+  class Incrementer {
+   public:
+    Incrementer() = default;
+    Incrementer(int initial_value) : m_x(initial_value) {
+    }
+
+    constexpr int peek() const {
+      return m_x;
+    }
+
+    constexpr operator int() {
+      return m_x++;
+    }
+
+   private:
+    int m_x{};
+  };
+
   MapParser::MapParser(const std::string& path) : m_map_path(path) {
   }
 
   MapParsedEntities MapParser::parse_map(
     TexturesManager& textures_manager) const {
-    int incremental_id = 0;
+    Incrementer incremented_id;
 
     UnitsFactory units_factory(&textures_manager);
     Map map;
@@ -50,42 +68,42 @@ namespace eape {
             [[fallthrough]];
           case 'b': {
             lhs_units.push_back(units_factory.build<Knight>(
-              incremental_id++, sf::Vector2i{ y, x }));
+              incremented_id, sf::Vector2i{ y, x }));
             break;
           }
           case 'c':
             [[fallthrough]];
           case 'd': {
             lhs_units.push_back(units_factory.build<Archer>(
-              incremental_id++, sf::Vector2i{ y, x }));
+              incremented_id, sf::Vector2i{ y, x }));
             break;
           }
           case 'e':
             [[fallthrough]];
           case 'f': {
             lhs_units.push_back(units_factory.build<Bomberman>(
-              incremental_id++, sf::Vector2i{ y, x }));
+              incremented_id, sf::Vector2i{ y, x }));
             break;
           }
           case 'g':
             [[fallthrough]];
           case 'h': {
             rhs_units.push_back(units_factory.build<Knight>(
-              incremental_id++, sf::Vector2i{ y, x }));
+              incremented_id, sf::Vector2i{ y, x }));
             break;
           }
           case 'i':
             [[fallthrough]];
           case 'j': {
             rhs_units.push_back(units_factory.build<Archer>(
-              incremental_id++, sf::Vector2i{ y, x }));
+              incremented_id, sf::Vector2i{ y, x }));
             break;
           }
           case 'k':
             [[fallthrough]];
           case 'l': {
             rhs_units.push_back(units_factory.build<Bomberman>(
-              incremental_id++, sf::Vector2i{ y, x }));
+              incremented_id, sf::Vector2i{ y, x }));
             break;
           }
         }

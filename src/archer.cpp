@@ -6,7 +6,7 @@ namespace eape {
     return true;  // TODO
   }
 
-  void Archer::attack(Unit& enemy) const {
+  void Archer::attack(Unit& enemy) {
     // TODO
   }
 

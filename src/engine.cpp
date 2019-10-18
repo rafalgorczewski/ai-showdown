@@ -61,17 +61,6 @@ namespace eape {
 
     std::tie(m_map, m_lhs_units, m_rhs_units) =
       std::tie(map, lhs_units, rhs_units);
-
-    for (auto lhs_unit : lhs_units) {
-      m_units_sprite_controllers.emplace(
-        lhs_unit->get_id(),
-        SpriteController(m_textures_manager[lhs_unit->get_texture_name()]));
-    }
-    for (auto rhs_unit : rhs_units) {
-      m_units_sprite_controllers.emplace(
-        rhs_unit->get_id(),
-        SpriteController(m_textures_manager[rhs_unit->get_texture_name()]));
-    }
   }
 
   void Engine::load_textures() {
@@ -141,23 +130,6 @@ namespace eape {
   }
 
   void Engine::draw_units() {
-    for (auto lhs_unit : m_lhs_units) {
-      auto& unit_sprite =
-        m_units_sprite_controllers.at(lhs_unit->get_id()).get_sprite();
-      auto sprite_size = unit_sprite.getTexture()->getSize();
-      unit_sprite.setPosition(lhs_unit->get_position().x * sprite_size.x,
-                              lhs_unit->get_position().y * sprite_size.y);
-    }
-    for (auto rhs_unit : m_rhs_units) {
-      auto& unit_sprite =
-        m_units_sprite_controllers.at(rhs_unit->get_id()).get_sprite();
-      auto sprite_size = unit_sprite.getTexture()->getSize();
-      unit_sprite.setPosition(rhs_unit->get_position().x * sprite_size.x,
-                              rhs_unit->get_position().y * sprite_size.y);
-    }
-    for (auto& [id, sprite_controller] : m_units_sprite_controllers) {
-      m_window.draw(sprite_controller.get_sprite());
-    }
   }
 
   void Engine::draw_projectiles() {

@@ -5,6 +5,8 @@
 #include <string>
 
 #include "drawable.hpp"
+#include "map.hpp"
+
 namespace eape {
 
   class Unit : public Drawable {
@@ -15,7 +17,7 @@ namespace eape {
     virtual ~Unit() = default;
 
     virtual bool can_attack(const Map& map, Unit& enemy) const = 0;
-    virtual void attack(Unit& enemy) const = 0;
+    virtual void attack(Unit& enemy) = 0;
 
     int get_id() const;
 

@@ -2,14 +2,13 @@
 #define EAPE_SPRITECONTROLLER_HPP
 
 #include <SFML/Graphics.hpp>
+#include <chrono>
 #include <string>
 #include <unordered_map>
 
 #include "animation.hpp"
 
 namespace eape {
-
-  enum class AnimationMode { Normal, Immediate };
 
   class SpriteController {
    public:

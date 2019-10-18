@@ -5,6 +5,8 @@
 
 namespace eape {
 
+  enum class AnimationMode { Normal, Immediate };
+
   class Animation {
    public:
     Animation() = default;
