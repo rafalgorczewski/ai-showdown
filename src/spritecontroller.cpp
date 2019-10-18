@@ -1,5 +1,7 @@
 #include "spritecontroller.hpp"
 
+#include <iostream>
+
 namespace eape {
 
   SpriteController::SpriteController(const sf::Texture& texture)
@@ -9,7 +11,8 @@ namespace eape {
   void SpriteController::add_animation(const std::string& name,
                                        const Animation& animation) {
     if (animation_already_exists(name)) {
-      // TODO: error
+      std::cerr << "SpriteController -- Animation already exists: " << name
+                << std::endl;
     } else {
       m_animations.emplace(name, animation);
     }
@@ -19,7 +22,8 @@ namespace eape {
                                        AnimationMode animation_mode,
                                        int ms_per_frame) {
     if (!animation_already_exists(name)) {
-      // TODO: error
+      std::cerr << "SpriteController -- There is no animation called: " << name
+                << std::endl;
     } else if (animation_mode == AnimationMode::Normal) {
       m_ms_per_normal_frame = ms_per_frame;
       reset_previous_normal_animation();
@@ -32,9 +36,18 @@ namespace eape {
     }
   }
 
+  void SpriteController::on_immediate_animation_end(
+    std::function<void()> callback) {
+    if (is_immediate_animation_active()) {
+      m_immediate_animation_end_callback = callback;
+    }
+  }
+
   void SpriteController::update() {
     if (!is_normal_animation_set()) {
-      // TODO: error
+      std::cerr
+        << "SpriteController -- Update called without normal animation set"
+        << std::endl;
     } else {
       if (is_immediate_animation_active()) {
         update_immediate_animation();
@@ -116,6 +129,11 @@ namespace eape {
     m_animations[m_normal_animation].change_tile_to_next();
     m_sprite.setTextureRect(
       m_animations[m_normal_animation].get_current_tile());
+
+    if (m_immediate_animation_end_callback) {
+      m_immediate_animation_end_callback();
+      m_immediate_animation_end_callback = {};
+    }
   }
 
   void SpriteController::update_normal_animation() {

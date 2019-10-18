@@ -1,5 +1,6 @@
 #include "drawable.hpp"
 
+#include <cmath>
 #include <utility>
 
 #include "config.hpp"
@@ -32,12 +33,30 @@ namespace eape {
       sf::Vector2f{ offset.x * C_TILE_SIZE, offset.y * C_TILE_SIZE });
   }
 
-  void Drawable::smooth_move_sprite(sf::Vector2i new_position,
-                                    std::chrono::milliseconds duration) {
+  void Drawable::smoothly_move_sprite(
+    sf::Vector2i new_position,
+    [[maybe_unused]] std::chrono::milliseconds duration) {
+    // TODO
+    move_sprite(new_position);
+    arrive();
   }
 
-  void Drawable::smoothly_move_sprite_by(sf::Vector2i offset,
-                                         std::chrono::milliseconds duration) {
+  void Drawable::smoothly_move_sprite_by(
+    sf::Vector2i offset, [[maybe_unused]] std::chrono::milliseconds duration) {
+    // TODO
+    move_sprite_by(offset);
+    arrive();
+  }
+
+  void Drawable::arrive() {
+    if (m_arrival_callback) {
+      m_arrival_callback();
+      m_arrival_callback = {};
+    }
+  }
+
+  void Drawable::on_smooth_sprite_arrival(std::function<void()> callback) {
+    m_arrival_callback = callback;
   }
 
 }  // namespace eape

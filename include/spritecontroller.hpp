@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <chrono>
+#include <functional>
 #include <string>
 #include <unordered_map>
 
@@ -23,6 +24,7 @@ namespace eape {
     void use_animation(const std::string& name,
                        AnimationMode animation_mode = AnimationMode::Normal,
                        int ms_per_frame = DEFAULT_MS_PER_NORMAL_FRAME);
+    void on_immediate_animation_end(std::function<void()> callback);
     void update();
 
     sf::Sprite& get_sprite() &;
@@ -55,6 +57,8 @@ namespace eape {
     int m_ms_per_normal_frame = DEFAULT_MS_PER_NORMAL_FRAME;
     int m_ms_per_immediate_frame = DEFAULT_MS_PER_IMMEDIATE_FRAME;
     sf::Clock m_animation_clock;
+
+    std::function<void()> m_immediate_animation_end_callback;
   };
 
 }  // namespace eape
