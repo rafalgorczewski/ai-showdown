@@ -26,6 +26,7 @@ namespace eape {
 
    private:
     void load_map(const std::string& map_path);
+    void recolour_units();
     void create_initial_state();
 
     void load_state();

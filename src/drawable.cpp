@@ -22,6 +22,10 @@ namespace eape {
     SpriteController::update();
   }
 
+  void Drawable::tint(sf::Color new_colour) {
+    SpriteController::get_sprite().setColor(new_colour);
+  }
+
   void Drawable::move_sprite(sf::Vector2i new_position) {
     SpriteController::get_sprite().setPosition(new_position.x * C_TILE_SIZE,
                                                new_position.y * C_TILE_SIZE);

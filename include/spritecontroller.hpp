@@ -13,8 +13,8 @@ namespace eape {
 
   class SpriteController {
    public:
-    static constexpr auto DEFAULT_MS_PER_NORMAL_FRAME = 20;
-    static constexpr auto DEFAULT_MS_PER_IMMEDIATE_FRAME = 15;
+    static constexpr auto DEFAULT_MS_PER_NORMAL_FRAME = 400;
+    static constexpr auto DEFAULT_MS_PER_IMMEDIATE_FRAME = 500;
 
    public:
     SpriteController(const sf::Texture& texture);

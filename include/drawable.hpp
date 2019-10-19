@@ -18,6 +18,7 @@ namespace eape {
     virtual ~Drawable() = 0;
 
     void draw(Window& window);
+    void tint(sf::Color new_colour);
 
    protected:
     using SpriteController::on_immediate_animation_end;

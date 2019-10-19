@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 
+#include "config.hpp"
 #include "drawable.hpp"
 #include "map.hpp"
 
@@ -13,8 +14,8 @@ namespace eape {
    public:
     Unit(int id,
          const SpriteController& sprite_controller,
-         int health = 3,
-         sf::Vector2i position = {});
+         sf::Vector2i position = {},
+         int health = C_DEFAULT_HP);
     virtual ~Unit() = default;
 
     virtual bool can_attack(const Map& map, Unit& enemy) const = 0;

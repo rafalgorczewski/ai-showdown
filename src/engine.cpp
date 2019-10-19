@@ -26,6 +26,7 @@ namespace eape {
   void Engine::load(const std::string& map_path) {
     load_textures();
     load_map(map_path);
+    recolour_units();
     create_initial_state();
   }
 
@@ -61,6 +62,15 @@ namespace eape {
 
     std::tie(m_map, m_lhs_units, m_rhs_units) =
       std::tie(map, lhs_units, rhs_units);
+  }
+
+  void Engine::recolour_units() {
+    for (auto lhs_unit : m_lhs_units) {
+      lhs_unit->tint(sf::Color::Red);
+    }
+    for (auto rhs_unit : m_rhs_units) {
+      rhs_unit->tint(sf::Color::Blue);
+    }
   }
 
   void Engine::load_textures() {
@@ -106,6 +116,11 @@ namespace eape {
     } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
       m_view.move({ 5, 0 });
     }
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right)) {
+      m_view.zoom(0.5);
+    } else if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
+      m_view.zoom(2.0);
+    }
     m_window.setView(m_view);
   }
 
@@ -130,6 +145,12 @@ namespace eape {
   }
 
   void Engine::draw_units() {
+    for (auto lhs_unit : m_lhs_units) {
+      lhs_unit->draw(m_window);
+    }
+    for (auto rhs_unit : m_rhs_units) {
+      rhs_unit->draw(m_window);
+    }
   }
 
   void Engine::draw_projectiles() {

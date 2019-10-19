@@ -1,5 +1,6 @@
 #include "unitsfactory.hpp"
 
+#include "config.hpp"
 #include "spritecontroller.hpp"
 
 namespace eape {
@@ -12,13 +13,18 @@ namespace eape {
                                               int id,
                                               sf::Vector2i position) {
     SpriteController sprite_controller((*m_textures_manager)["knight"]);
-    return std::make_shared<Knight>(id, sprite_controller, position);
+    sprite_controller.add_animation("idle", { { 0, 0 }, { 24, 24 }, 2 });
+
+    return std::make_shared<Knight>(
+      id, sprite_controller, position, C_KNIGHT_HP);
   }
 
   std::shared_ptr<Archer> UnitsFactory::build(std::type_identity<Archer>,
                                               int id,
                                               sf::Vector2i position) {
     SpriteController sprite_controller((*m_textures_manager)["archer"]);
+    sprite_controller.add_animation("idle", { { 0, 0 }, { 24, 24 }, 2 });
+
     return std::make_shared<Archer>(id, sprite_controller, position);
   }
 
@@ -26,6 +32,8 @@ namespace eape {
                                                  int id,
                                                  sf::Vector2i position) {
     SpriteController sprite_controller((*m_textures_manager)["bomberman"]);
+    sprite_controller.add_animation("idle", { { 0, 0 }, { 24, 24 }, 2 });
+
     return std::make_shared<Bomberman>(id, sprite_controller, position);
   }
 

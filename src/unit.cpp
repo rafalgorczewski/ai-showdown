@@ -4,12 +4,14 @@ namespace eape {
 
   Unit::Unit(int id,
              const SpriteController& sprite_controller,
-             int health,
-             sf::Vector2i position)
+             sf::Vector2i position,
+             int health)
       : Drawable(sprite_controller),
         m_id(id),
         m_health(health),
         m_position(position) {
+    move_sprite(position);
+    use_animation("idle");
   }
 
   void Unit::receive_damage(int damage) {
