@@ -1,10 +1,11 @@
 #ifndef EAPE_UNITSFACTORY_HPP
 #define EAPE_UNITSFACTORY_HPP
 
-#include <SFML/Graphics.hpp>
 #include <memory>
 #include <type_traits>
 #include <utility>
+
+#include <SFML/Graphics.hpp>
 
 #include "archer.hpp"
 #include "bomberman.hpp"

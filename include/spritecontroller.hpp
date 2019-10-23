@@ -1,11 +1,12 @@
 #ifndef EAPE_SPRITECONTROLLER_HPP
 #define EAPE_SPRITECONTROLLER_HPP
 
-#include <SFML/Graphics.hpp>
 #include <chrono>
 #include <functional>
 #include <string>
 #include <unordered_map>
+
+#include <SFML/Graphics.hpp>
 
 #include "animation.hpp"
 

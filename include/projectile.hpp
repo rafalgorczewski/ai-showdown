@@ -1,8 +1,9 @@
 #ifndef EAPE_PROJECTILE_HPP
 #define EAPE_PROJECTILE_HPP
 
-#include <SFML/Graphics.hpp>
 #include <string>
+
+#include <SFML/Graphics.hpp>
 
 #include "drawable.hpp"
 

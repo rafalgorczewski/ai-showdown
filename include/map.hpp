@@ -1,13 +1,15 @@
 #ifndef EAPE_MAP_HPP
 #define EAPE_MAP_HPP
 
-#include <SFML/Graphics.hpp>
 #include <cstddef>
 #include <optional>
 #include <string>
 #include <vector>
 
+#include <SFML/Graphics.hpp>
+
 #include "state.pb.h"
+
 #include "texturesmanager.hpp"
 
 namespace eape {

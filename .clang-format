@@ -12,7 +12,7 @@ IndentWidth: '2'
 Language: Cpp
 NamespaceIndentation: All
 PointerAlignment: Left
-SortIncludes: 'true'
+SortIncludes: 'false'
 SpaceBeforeParens: ControlStatements
 SpacesInParentheses: 'false'
 Standard: Cpp11

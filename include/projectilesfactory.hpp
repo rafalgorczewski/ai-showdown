@@ -1,10 +1,11 @@
 #ifndef EAPE_PROJECTILESFACTORY_HPP
 #define EAPE_PROJECTILESFACTORY_HPP
 
-#include <SFML/Graphics.hpp>
 #include <memory>
 #include <type_traits>
 #include <utility>
+
+#include <SFML/Graphics.hpp>
 
 #include "arrow.hpp"
 #include "bomb.hpp"
@@ -28,8 +29,9 @@ namespace eape {
    private:
     std::shared_ptr<Arrow> build(std::type_identity<Arrow>,
                                  sf::Vector2i destination);
-    std::shared_ptr<Bomb> build(std::type_identity<Bomb>,
-                                sf::Vector2i destination);
+    std::shared_ptr<Bomb> build(
+      ststd::shared_ptr<Knight> d::type_identity<Bomb>,
+      sf::Vector2i destination);
 
     TexturesManager* m_textures_manager;
   };

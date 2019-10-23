@@ -1,8 +1,9 @@
 #ifndef EAPE_WINDOW_HPP
 #define EAPE_WINDOW_HPP
 
-#include <SFML/Graphics.hpp>
 #include <string>
+
+#include <SFML/Graphics.hpp>
 
 namespace eape {
 

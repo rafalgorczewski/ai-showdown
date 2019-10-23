@@ -1,8 +1,9 @@
 #ifndef EAPE_ARROW_HPP
 #define EAPE_ARROW_HPP
 
-#include <SFML/Graphics.hpp>
 #include <string>
+
+#include <SFML/Graphics.hpp>
 
 #include "projectile.hpp"
 

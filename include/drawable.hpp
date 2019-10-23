@@ -1,9 +1,10 @@
 #ifndef EAPE_DRAWABLE_HPP
 #define EAPE_DRAWABLE_HPP
 
-#include <SFML/Graphics.hpp>
 #include <chrono>
 #include <functional>
+
+#include <SFML/Graphics.hpp>
 
 #include "spritecontroller.hpp"
 #include "window.hpp"

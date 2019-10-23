@@ -1,13 +1,15 @@
 #ifndef EAPE_UNIT_HPP
 #define EAPE_UNIT_HPP
 
-#include <SFML/Graphics.hpp>
 #include <string>
+
+#include <SFML/Graphics.hpp>
+
+#include "state.pb.h"
 
 #include "config.hpp"
 #include "drawable.hpp"
 #include "map.hpp"
-#include "state.pb.h"
 
 namespace eape {
 
