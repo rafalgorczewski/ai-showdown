@@ -13,7 +13,8 @@ namespace eape {
 
   class Projectile : public Drawable {
    public:
-    Projectile(sf::Vector2i destination,
+    Projectile(int thrown_by_id,
+               sf::Vector2i destination,
                const SpriteController& sprite_controller);
     virtual ~Projectile() = default;
 
@@ -25,6 +26,7 @@ namespace eape {
     eap::Projectile serialize_partially() const;  // TODO
 
    private:
+    int m_thrown_by_id;
     sf::Vector2i m_destination;  // TODO: Add thrown_by_id
   };
 

@@ -12,6 +12,8 @@ namespace eape {
   class Bomb : public Projectile {
    public:
     using Projectile::Projectile;
+
+    eap::Projectile serialize() const override;
   };
 
 }  // namespace eape

@@ -1,3 +1,9 @@
 #include "arrow.hpp"
 
-namespace eape {}  // namespace eape
+namespace eape {
+
+  eap::Projectile Arrow::serialize() const {
+    return {};  // TODO
+  }
+
+}  // namespace eape

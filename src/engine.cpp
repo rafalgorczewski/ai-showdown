@@ -99,6 +99,14 @@ namespace eape {
       enemy_unit_proto->CopyFrom(unit->serialize());
     }
 
+    for (const auto projectile : m_projectiles) {
+      auto const projectile_proto =
+        state_proto.mutable_map()->add_projectiles();
+      projectile_proto->CopyFrom(projectile->serialize());
+    }
+
+    std::ofstream state_stream(STATE_FILENAME);
+    state_proto.SerializeToOstream(&state_stream);
   }
 
   void Engine::load_state() {

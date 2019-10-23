@@ -61,6 +61,7 @@ namespace eape {
     Map m_map;
     std::vector<std::shared_ptr<Unit>> m_lhs_units;
     std::vector<std::shared_ptr<Unit>> m_rhs_units;
+    std::vector<std::shared_ptr<Projectile>> m_projectiles;
 
     TexturesManager m_textures_manager;
   };
