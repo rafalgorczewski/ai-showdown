@@ -233,7 +233,7 @@ namespace eape {
   }
 
   void Engine::update_environment() {
-    // TODO
+    // TODO: ???
   }
 
   void Engine::clean() {
@@ -253,16 +253,18 @@ namespace eape {
   }
 
   void Engine::draw_units() {
-    for (auto lhs_unit : m_lhs_units) {
+    for (const auto lhs_unit : m_lhs_units) {
       lhs_unit->draw(m_window);
     }
-    for (auto rhs_unit : m_rhs_units) {
+    for (const auto rhs_unit : m_rhs_units) {
       rhs_unit->draw(m_window);
     }
   }
 
   void Engine::draw_projectiles() {
-    // TODO
+    for (const auto projectile : m_projectiles) {
+      projectile->draw(m_window);
+    }
   }
 
   void Engine::flush() {
