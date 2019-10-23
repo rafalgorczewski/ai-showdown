@@ -29,6 +29,7 @@ namespace eape {
     void recolour_units();
     void create_initial_state();
 
+    void clear_state();
     void load_state();
     void load_textures();
     void run_lhs_bot();

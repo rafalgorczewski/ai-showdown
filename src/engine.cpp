@@ -6,6 +6,8 @@
 #include "state.pb.h"
 
 #include "mapparser.hpp"
+#include "unitsfactory.hpp"
+#include "projectilesfactory.hpp"
 
 namespace eape {
 
@@ -38,6 +40,7 @@ namespace eape {
   }
 
   void Engine::update() {
+    clear_state();
     load_state();
 
     if (m_turn == Turn::Lhs) {
@@ -109,16 +112,38 @@ namespace eape {
     state_proto.SerializeToOstream(&state_stream);
   }
 
+  void Engine::clear_state() {
+    m_lhs_units.clear();
+    m_rhs_units.clear();
+    m_projectiles.clear();
+  }
+
   void Engine::load_state() {
-    // TODO
+    std::ifstream state_stream(STATE_FILENAME);
+    eap::State state_proto;
+    state_proto.ParseFromIstream(&state_stream);
+
+    UnitsFactory units_factory(&m_textures_manager);
+    for (const auto& ally_unit_proto : state_proto.map().ally_units()) {
+      m_lhs_units.push_back(units_factory.deserialize(ally_unit_proto));
+    }
+    for (const auto& enemy_unit_proto : state_proto.map().enemy_units()) {
+      m_lhs_units.push_back(units_factory.deserialize(enemy_unit_proto));
+    }
+
+    ProjectilesFactory projectiles_factory(&m_textures_manager);
+    for (const auto& projectile_proto : state_proto.map().projectiles()) {
+      m_projectiles.push_back(
+        projectiles_factory.deserialize(projectile_proto));
+    }
   }
 
   void Engine::run_lhs_bot() {
-    // std::system(m_lhs_bot_path.c_str());
+    std::system(m_lhs_bot_path.c_str());
   }
 
   void Engine::run_rhs_bot() {
-    // std::system(m_rhs_bot_path.c_str());
+    std::system(m_rhs_bot_path.c_str());
   }
 
   void Engine::apply_result() {

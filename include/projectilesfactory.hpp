@@ -27,6 +27,9 @@ namespace eape {
                    destination);
     }
 
+    std::shared_ptr<Projectile> deserialize(
+      const eap::Projectile& projectile_proto);
+
    private:
     std::shared_ptr<Arrow> build(std::type_identity<Arrow>,
                                  int thrown_by_id sf::Vector2i destination);
