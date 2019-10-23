@@ -11,4 +11,12 @@ namespace eape {
     return m_destination;
   }
 
+  eap::Projectile Projectile::serialize_partially() const {
+    eap::Projectile projectile_proto;
+
+    // TODO
+
+    return unit_proto;
+  }
+
 }  // namespace eape

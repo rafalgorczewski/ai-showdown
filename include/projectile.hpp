@@ -5,6 +5,8 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "state.pb.h"
+
 #include "drawable.hpp"
 
 namespace eape {
@@ -17,8 +19,13 @@ namespace eape {
 
     sf::Vector2i get_destination() const;
 
+    virtual eap::Projectile serialize() const = 0;
+
    private:
-    sf::Vector2i m_destination;
+    eap::Projectile serialize_partially() const;  // TODO
+
+   private:
+    sf::Vector2i m_destination;  // TODO: Add thrown_by_id
   };
 
 }  // namespace eape
