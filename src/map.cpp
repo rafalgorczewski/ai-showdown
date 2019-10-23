@@ -19,6 +19,10 @@ namespace eape {
     m_tiles.emplace_back(size);
   }
 
+  bool Map::is_tile_passable(sf::Vector2i position) const {
+    return m_tiles[x][y] == Tile::Floor;
+  }
+
   std::vector<sf::Sprite>& Map::get_sprites(
     TexturesManager& textures_manager) & {
     if (!m_sprites) {

@@ -24,6 +24,8 @@ namespace eape {
 
     void add_row(std::size_t size);
 
+    bool is_tile_passable(sf::Vector2i position) const;
+
     std::vector<sf::Sprite>& get_sprites(TexturesManager& textures_manager) &;
     const std::vector<sf::Sprite>& get_sprites() const&& = delete;
 
