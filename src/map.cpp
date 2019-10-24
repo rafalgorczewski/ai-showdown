@@ -20,7 +20,7 @@ namespace eape {
   }
 
   bool Map::is_tile_passable(sf::Vector2i position) const {
-    return m_tiles[x][y] == Tile::Floor;
+    return m_tiles[position.x][position.y] == Tile::Floor;
   }
 
   std::vector<sf::Sprite>& Map::get_sprites(
@@ -38,11 +38,11 @@ namespace eape {
     return { m_tiles.size(), m_tiles.front().size() };
   }
 
-  eap::Map Map::serialize_partly() const {
+  eap::Map Map::serialize_partially() const {
     eap::Map map_proto;
 
-    map_proto.mutable_size()->set_x(m_map.get_size().x);
-    map_proto.mutable_size()->set_x(m_map.get_size().y);
+    map_proto.mutable_size()->set_x(get_size().x);
+    map_proto.mutable_size()->set_x(get_size().y);
 
     for (std::size_t x = 0; x < get_size().x; ++x) {
       for (std::size_t y = 0; y < get_size().y; ++y) {

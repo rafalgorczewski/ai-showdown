@@ -35,7 +35,7 @@ namespace eape {
 
     virtual eap::Unit serialize() const = 0;
 
-   private:
+   protected:
     eap::Unit serialize_partially() const;
 
    private:

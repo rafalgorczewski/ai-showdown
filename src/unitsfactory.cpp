@@ -10,24 +10,24 @@ namespace eape {
   }
 
   std::shared_ptr<Unit> UnitsFactory::deserialize(const eap::Unit& unit_proto) {
-    switch (unit_proto.class()) {
+    switch (unit_proto.class_()) {
       default:
         [[fallthrough]];
-      case eap::Class::Knight: {
+      case eap::Class::KNIGHT: {
         return build<Knight>(
           unit_proto.id(),
           { unit_proto.position().x(), unit_proto.position().y() },
           unit_proto.health());
         break;
       }
-      case eap::Class::Archer: {
+      case eap::Class::ARCHER: {
         return build<Archer>(
           unit_proto.id(),
           { unit_proto.position().x(), unit_proto.position().y() },
           unit_proto.health());
         break;
       }
-      case eap::Class::Bomberman: {
+      case eap::Class::BOMBERMAN: {
         return build<Bomberman>(
           unit_proto.id(),
           { unit_proto.position().x(), unit_proto.position().y() },

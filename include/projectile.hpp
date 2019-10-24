@@ -22,7 +22,7 @@ namespace eape {
 
     virtual eap::Projectile serialize() const = 0;
 
-   private:
+   protected:
     eap::Projectile serialize_partially() const;  // TODO
 
    private:

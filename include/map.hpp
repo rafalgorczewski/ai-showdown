@@ -32,7 +32,7 @@ namespace eape {
     sf::Vector2i get_size() const;
 
     // Serialize size and tiles only
-    eap::Map serialize_partly() const;
+    eap::Map serialize_partially() const;
 
    private:
     void generate_sprites(TexturesManager& textures_manager);

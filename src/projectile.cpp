@@ -21,7 +21,7 @@ namespace eape {
     projectile_proto.mutable_position()->set_x(m_destination.x);
     projectile_proto.mutable_position()->set_y(m_destination.y);
 
-    return unit_proto;
+    return projectile_proto;
   }
 
 }  // namespace eape

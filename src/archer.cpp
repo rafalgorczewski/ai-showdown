@@ -11,7 +11,7 @@ namespace eape {
   }
 
   eap::Unit Archer::serialize() const {
-    auto unit_proto = serialize_partly();
+    auto unit_proto = serialize_partially();
     unit_proto.set_class_(eap::Class::ARCHER);
     return unit_proto;
   }

@@ -32,9 +32,11 @@ namespace eape {
 
    private:
     std::shared_ptr<Arrow> build(std::type_identity<Arrow>,
-                                 int thrown_by_id sf::Vector2i destination);
+                                 int thrown_by_id,
+                                 sf::Vector2i destination);
     std::shared_ptr<Bomb> build(std::type_identity<Bomb>,
-                                int thrown_by_id sf::Vector2i destination);
+                                int thrown_by_id,
+                                sf::Vector2i destination);
 
     TexturesManager* m_textures_manager;
   };

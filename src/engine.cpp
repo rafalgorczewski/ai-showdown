@@ -88,7 +88,7 @@ namespace eape {
 
   void Engine::create_initial_state() {
     eap::State state_proto;
-    state_proto.mutable_map()->CopyFrom(m_map.serialize_partly());
+    state_proto.mutable_map()->CopyFrom(m_map.serialize_partially());
 
     const auto& ally_units =
       ((m_turn == Turn::Lhs) ? m_lhs_units : m_rhs_units);
@@ -154,7 +154,7 @@ namespace eape {
 
     std::ifstream result_stream(RESULT_FILENAME);
     eap::Result result_proto;
-    result_proto.ParseFromIstream(result_stream);
+    result_proto.ParseFromIstream(&result_stream);
 
     auto& current_units = ((m_turn == Turn::Lhs) ? m_lhs_units : m_rhs_units);
 
@@ -174,8 +174,8 @@ namespace eape {
         case eap::Action::Type::Action_Type_ATTACK: {
           const auto is_target = [&action_proto](std::shared_ptr<Unit> unit) {
             return unit->get_position() ==
-                   { action_proto.target_position().x(),
-                     action_proto.target_position().y() };
+                   sf::Vector2i{ action_proto.target_position().x(),
+                                 action_proto.target_position().y() };
           };
           const auto target_lhs_unit_it =
             std::find_if(begin(m_lhs_units), end(m_lhs_units), is_target);
@@ -189,6 +189,7 @@ namespace eape {
           } else {
             // TODO: Miss
           }
+          break;
         }
         case eap::Action::Type::Action_Type_MOVEMENT: {
           if (m_map.is_tile_passable({ action_proto.target_position().x(),
@@ -200,7 +201,9 @@ namespace eape {
           }
           break;
         }
-        default: { break; }
+        default: {
+          break;
+        }
       }
     }
   }
@@ -224,9 +227,9 @@ namespace eape {
     } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
       m_view.move({ 5, 0 });
     }
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right)) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::PageUp)) {
       m_view.zoom(0.5);
-    } else if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
+    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::PageDown)) {
       m_view.zoom(2.0);
     }
     m_window.setView(m_view);

@@ -14,13 +14,7 @@ namespace eape {
     switch (projectile_proto.type()) {
       default:
         [[fallthrough]];
-      case eap::Projectile::Type::Arrow: {
-        return build<Arrow>(
-          projectile_proto.thrown_by_unit_id(),
-          { projectile_proto.position().x(), projectile_proto.position().y() });
-        break;
-      }
-      case eap::Projectile::Type::Bomb: {
+      case eap::Projectile::Type::Projectile_Type_BOMB: {
         return build<Bomb>(
           projectile_proto.thrown_by_unit_id(),
           { projectile_proto.position().x(), projectile_proto.position().y() });

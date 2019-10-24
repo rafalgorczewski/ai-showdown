@@ -11,7 +11,7 @@ namespace eape {
   }
 
   eap::Unit Knight::serialize() const {
-    auto unit_proto = serialize_partly();
+    auto unit_proto = serialize_partially();
     unit_proto.set_class_(eap::Class::KNIGHT);
     return unit_proto;
   }
