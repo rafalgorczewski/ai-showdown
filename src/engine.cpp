@@ -76,10 +76,10 @@ namespace eape {
 
   void Engine::recolour_units() {
     for (auto lhs_unit : m_lhs_units) {
-      lhs_unit->tint(sf::Color::Red);
+      lhs_unit->tint(sf::Color{ 255, 150, 150 });
     }
     for (auto rhs_unit : m_rhs_units) {
-      rhs_unit->tint(sf::Color::Blue);
+      rhs_unit->tint(sf::Color{ 150, 150, 255 });
     }
   }
 
@@ -132,7 +132,7 @@ namespace eape {
       m_lhs_units.push_back(units_factory.deserialize(ally_unit_proto));
     }
     for (const auto& enemy_unit_proto : state_proto.map().enemy_units()) {
-      m_lhs_units.push_back(units_factory.deserialize(enemy_unit_proto));
+      m_rhs_units.push_back(units_factory.deserialize(enemy_unit_proto));
     }
 
     ProjectilesFactory projectiles_factory(&m_textures_manager);

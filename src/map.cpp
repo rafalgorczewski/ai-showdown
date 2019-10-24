@@ -62,7 +62,7 @@ namespace eape {
           }
         }
         tile_proto->mutable_position()->set_x(x);
-        tile_proto->mutable_position()->set_x(y);
+        tile_proto->mutable_position()->set_y(y);
       }
     }
 
