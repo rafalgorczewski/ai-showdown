@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <algorithm>
 #include <iterator>
+#include <execution>
 
 #include "state.pb.h"
 #include "result.pb.h"
@@ -34,7 +35,6 @@ namespace eape {
   void Engine::load(const std::string& map_path) {
     load_textures();
     load_map(map_path);
-    recolour_units();
     create_initial_state();
   }
 
@@ -45,6 +45,7 @@ namespace eape {
   void Engine::update() {
     clear_state();
     load_state();
+    recolour_units();
 
     if (m_turn == Turn::Lhs) {
       run_lhs_bot();
@@ -160,7 +161,8 @@ namespace eape {
 
     for (const auto& action_proto : result_proto.actions()) {
       const auto unit_it =
-        std::find_if(begin(current_units),
+        std::find_if(std::execution::par_unseq,
+                     begin(current_units),
                      end(current_units),
                      [&action_proto](std::shared_ptr<Unit> unit) {
                        return unit->get_id() == action_proto.entity_id();
@@ -178,9 +180,15 @@ namespace eape {
                                  action_proto.target_position().y() };
           };
           const auto target_lhs_unit_it =
-            std::find_if(begin(m_lhs_units), end(m_lhs_units), is_target);
+            std::find_if(std::execution::par_unseq,
+                         begin(m_lhs_units),
+                         end(m_lhs_units),
+                         is_target);
           const auto target_rhs_unit_it =
-            std::find_if(begin(m_rhs_units), end(m_rhs_units), is_target);
+            std::find_if(std::execution::par_unseq,
+                         begin(m_rhs_units),
+                         end(m_rhs_units),
+                         is_target);
 
           if (target_lhs_unit_it != end(m_lhs_units)) {
             action_unit->attack(**target_lhs_unit_it);

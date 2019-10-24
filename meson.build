@@ -18,10 +18,10 @@ cpp_release_flags = [
 add_global_arguments(cpp_common_flags, language : 'cpp')
 
 if get_option('buildtype') == 'debug'
-    link_arguments = ['-lprotobuf']
+    link_arguments = ['-lprotobuf', '-ltbb']
     add_global_arguments(cpp_debug_flags, language : 'cpp')
 elif get_option('buildtype') == 'release'
-    link_arguments = ['-lprotobuf']
+    link_arguments = ['-lprotobuf', '-ltbb']
     add_global_arguments(cpp_release_flags, language : 'cpp')
 endif
 
